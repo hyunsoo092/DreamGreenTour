@@ -102,3 +102,5 @@ theme.FONT_LINE = {
   h4: "26.4px",
   h5: "22px",
 };
+
+export default theme;
