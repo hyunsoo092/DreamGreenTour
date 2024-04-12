@@ -6,9 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { legacy_createStore as createStore } from "redux";
 import { Provider } from "react-redux";
 import { devToolsEnhancer } from "redux-devtools-extension";
-import pageControl from "./modules/pageControl";
-const store = createStore(pageControl, devToolsEnhancer());
-
+import rootReducer from "./modules";
+const store = createStore(rootReducer, devToolsEnhancer());
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>

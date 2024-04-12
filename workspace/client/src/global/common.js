@@ -17,3 +17,15 @@ export const flexCenterRow = css`
   justify-content: center;
   align-items: center;
 `;
+
+export const flexEvenlyCenter = css`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const flexSpaceAroundCenter = css`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
