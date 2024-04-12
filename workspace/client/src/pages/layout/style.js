@@ -84,8 +84,11 @@ S.Menu = styled.div`
   border-right: 1px solid lightgray;
 `;
 
+<<<<<<< HEAD
 S.Home = styled.div`
   
 `
 
+=======
+>>>>>>> 92cd4a6d6ed61a5d882a29af511bc3339a6af29d
 export default S;
