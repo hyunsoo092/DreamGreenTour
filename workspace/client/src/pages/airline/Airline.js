@@ -8,39 +8,39 @@ import TapComponent from "./TapComponent";
 import AirWeekSale from "./AirWeekSale";
 
 const Airline = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Layout />
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout />
 
-            <S.AirHotelTabDiv>
-                <S.AirTabHeadingDiv>
-                    <S.AirTabHeading>항공</S.AirTabHeading>
-                </S.AirTabHeadingDiv>
-                <S.HotelTabHeadingDiv>
-                    <S.HotelTabHeading>호텔</S.HotelTabHeading>
-                </S.HotelTabHeadingDiv>
-            </S.AirHotelTabDiv>
+      <S.AirHotelTabDiv>
+        <S.AirTabHeadingDiv>
+          <S.AirTabHeading>항공</S.AirTabHeading>
+        </S.AirTabHeadingDiv>
+        <S.HotelTabHeadingDiv>
+          <S.HotelTabHeading>호텔</S.HotelTabHeading>
+        </S.HotelTabHeadingDiv>
+      </S.AirHotelTabDiv>
 
-            <S.DivVisualRoll>
-                <S.Image1 src="/img/picture/slide_jeju.jpg" />
-                <S.Image2 src="/img/picture/slide_pohang.jpg" />
-                <S.Image3 src="/img/picture/slide_daegu.jpg" />
-            </S.DivVisualRoll>
+      <S.DivVisualRoll>
+        <S.Image1 src="/img/picture/slide_jeju.jpg" />
+        <S.Image2 src="/img/picture/slide_pohang.jpg" />
+        <S.Image3 src="/img/picture/slide_daegu.jpg" />
+      </S.DivVisualRoll>
 
-            <>
-                <TapComponent />
-            </>
+      <>
+        <TapComponent />
+      </>
 
-            <S.AirBanner1>
-                <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
-            </S.AirBanner1>
+      <S.AirBanner1>
+        <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
+      </S.AirBanner1>
 
-            <>
-                <AirWeekSale />
-            </>
-        </ThemeProvider>
-    );
+      <>
+        <AirWeekSale />
+      </>
+    </ThemeProvider>
+  );
 };
 
 export default Airline;

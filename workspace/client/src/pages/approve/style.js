@@ -136,7 +136,7 @@ S.WomanBtn = styled.button.attrs({ type: "button" })`
 S.Input = styled.input`
   position: absolute;
 
-  width: 77.5%;
+  width: 44.5%;
   border: none;
   padding-left: 15px;
   border-radius: 10px;
