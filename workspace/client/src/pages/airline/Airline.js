@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
-=======
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../global/global";
@@ -10,20 +6,10 @@ import Layout from "../layout/Layout";
 import S from "./style";
 import TapComponent from "./TapComponent";
 import AirWeekSale from "./AirWeekSale";
->>>>>>> 92cd4a6d6ed61a5d882a29af511bc3339a6af29d
 
-
-const Airline = () => {
-<<<<<<< HEAD
  
+const Airline = () => {
 
-  return (
-    <div>
-      항공 페이지
-      <Outlet />
-    </div>
-  );
-=======
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle />
@@ -57,7 +43,7 @@ const Airline = () => {
             </>
         </ThemeProvider>
     );
->>>>>>> 92cd4a6d6ed61a5d882a29af511bc3339a6af29d
+
 };
 
 export default Airline;

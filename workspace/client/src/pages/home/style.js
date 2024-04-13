@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import theme from "../../global/theme";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const S = {};
 
 // 1번 
@@ -97,8 +96,7 @@ S.ListWrapper = styled.div`
   `
 
 
-   // 2번 
-
+  // 2번 
   S.Title1 = styled.div`
      
       .title1 {
@@ -159,7 +157,7 @@ S.ListWrapper = styled.div`
     cursor: pointer;
   `
 
-// 3번 
+ // 3번 
   S.top = styled.div`
     display: flex;
     flex-direction: column;
@@ -457,6 +455,7 @@ S.end = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   .last { 
   font-size: ${theme.FONT_SIZE.h3};
   font-weight: ${theme.FONT_WEIGHT.bold};
@@ -469,6 +468,7 @@ S.icons = styled.div`
   display: flex;
   gap: 10px;
   border: 1px solid #e7e7e7;
+  background-color: #f5f5f5;
 
   p {
     line-height: 1.5; /* 예시로 줄 간격을 1.5배로 설정 */

@@ -2,11 +2,10 @@ import React from "react";
 import S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-<<<<<<< HEAD
-import { Link, Outlet } from "react-router-dom";
-=======
 import { Link } from "react-router-dom";
->>>>>>> 92cd4a6d6ed61a5d882a29af511bc3339a6af29d
+import Home from '../home/Home'
+
+
 const Layout = () => {
   return (
     <S.Wrapper>
@@ -40,21 +39,12 @@ const Layout = () => {
         <Link to={"/tour"}>여행</Link>
         <Link to={"/review"}>후기</Link>
         <Link to={"/theme"}>테마</Link>
-        <Link to={"/airline"}>항공/숙박</Link>
+        <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
-<<<<<<< HEAD
-      <S.Home>
-        <Outlet/>
-      </S.Home>
-    </S.Wrapper>
-   
-    
-  
-    );
-=======
+      
+      <Home/>
     </S.Wrapper>
   );
->>>>>>> 92cd4a6d6ed61a5d882a29af511bc3339a6af29d
 };
 
 export default Layout;

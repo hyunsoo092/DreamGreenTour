@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import S from './style';
-import { Outlet } from 'react-router-dom';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'; // 빈 하트
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons'; // 속이 찬 하트
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -77,11 +76,11 @@ const handleClick = (text) => {
 
 // 3. 이번주에 가장 사랑받은 여행
 
-// 아이콘 하트
+// 3-1 아이콘 하트 누르기 
 
 
 
-// 각 테마 
+// 3-2 각 테마 
 const [TravelType, setTravelType] = useState('seoul');
 
 let travelToShow;
@@ -595,9 +594,6 @@ else if (TravelType === 'kangwon') {
 }
 
 
-
-
-  
   return (
     <div>
       <S.Section>
@@ -658,9 +654,7 @@ else if (TravelType === 'kangwon') {
           <S.Text>제주도</S.Text>
         </S.Circle> */}
      
-    </S.region>
-
-
+        </S.region>
 
         <S.top>
           <p className='num1'>WEEKLY BEST DEALS</p>
@@ -809,7 +803,7 @@ else if (TravelType === 'kangwon') {
           </S.end>
 
       </S.Section>
-      <Outlet />
+      
     </div>
   );
 };
