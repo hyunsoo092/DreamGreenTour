@@ -13,11 +13,27 @@ const S = {};
         ${flexCenterColumn}
     `
 
-    S.MainImg =styled.img`
+    S.MainImg =styled.div`
     background-image: url('Guadalupe.jpeg');
-     display:flex;
+    background-repeat: no-repeat;
+    background-position: center;
      width:100vh;
     height:300px;
+    ${flexCenterColumn}
+    align-content: center;
+    position: relative; 
+    z-index: 100;
+    ::before{
+      z-index: -100; 
+      background-color: rgba(0,0,0,0.1);
+     position: absolute; 
+    content: "";
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.45;
+    }
     `
     S.ButtonWrapper = styled.div`
         width: 100%;
@@ -33,8 +49,9 @@ S.P=styled.p`
  color: gray;
 `
 
+
 S.DropDown=styled.div`
-width:48px;
+width:60px;
 position:relative;
 display:inline-block;
 &:hover{
@@ -45,25 +62,6 @@ display:inline-block;
   }
 }`
 
-S.DropDownBox = styled.div`
-position:absolute;
-display:none;
-flex-direction:column;
-justify-content:space-around;
-border-color: black;
-border-radius: 12px;
-z-index: 1;
-height: 72px;
-width: 40px;
-top:24px;
-right: 0;
-`
-S.HoverButton = styled.div`
-color:#656565;
-&:hover{
-  color:white;
-}
-`
 S.ThemeTravel=styled.div`
     width: 80%;
     border-radius: 10px;
