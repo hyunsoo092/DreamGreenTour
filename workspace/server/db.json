@@ -1,1 +1,49 @@
-{}
+
+  {
+    "themeTrip" : [
+
+      {
+        "id" : 1,
+        "title" : "겨울이라 좋은 대전 상소동 산림욕장, 얼음동산,우암사적공원",
+        "content" : "19000",
+        "isChecked" : false
+      },
+      {
+        "id" : 2,
+        "title" : "여름 벚꽃 여행, 운암사, 경희루,기차 여행",
+        "content" : "26000",
+        "isChecked" : false
+      },
+      {
+        "id" : 3,
+        "title" : "여수 돌산 투어, 요트투어 패키지",
+        "content" : "50000",
+        "isChecked" : false
+      },
+      {
+        "id" : 4,
+        "title" : "여름이라 좋은 소곡 상소동 산림욕장, 얼음동산,우암사적공원",
+        "content" : "42000",
+        "isChecked" : false
+      },
+      {
+        "id" : 5,
+        "title" : "동그라미,우암사적공원",
+        "content" : "19000",
+        "isChecked" : false
+      },
+      {
+        "id" : 6,
+        "title" : "겨울이라 좋은 대전 상소동 산림욕장, 얼음동산,우암사적공원",
+        "content" : "19000",
+        "isChecked" : false
+      },
+      {
+        "id" : 7,
+        "title" : "겨울이라 좋은 대전 상소동 산림욕장, 얼음동산,우암사적공원",
+        "content" : "19000",
+        "isChecked" : false
+      }
+    ] 
+
+  }

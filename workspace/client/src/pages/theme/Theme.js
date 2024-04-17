@@ -1,7 +1,11 @@
 import React from "react";
-import { Outlet,Link } from "react-router-dom";
+import { Outlet,Link, RouterProvider, NavLink } from "react-router-dom";
 import S from "./style.js";
 import BasicSpan from "./basicSpan/BasicSpan.jsx";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "../../global/global.js";
+import Layout from "../layout/Layout.js";
+import router from "../../routes/router.js";
 
 const Theme = () => {
 //   const [theme, setTheme] = useState([]);
@@ -23,19 +27,33 @@ const Theme = () => {
 
   return (
     <>
+    
+            <GlobalStyle />
+            <Layout />
+
+
     <S.Wrapper>
+      <NavLink to={'/theme'}>
     <S.ImageWrapper>
     {/* src={process.env.PUBLIC_URL + './Guadalupe.jpeg'}  */}
-                <S.MainImg >
-                  <BasicSpan color={"white"} style1={'medium'} size={'heading'} >이색 테마 여행</BasicSpan>
+                <S.MainImg className="MainImg" >
+                  <BasicSpan color={"white"} style1={'medium'} size={'heading'} >이색 테마 여행</BasicSpan>  
+                  {/* 나중에 a태그 */}
                   <BasicSpan color={"black"} style1={'small'} size={'small'}>#데이트 코스 #추천 #국내</BasicSpan>
                 </S.MainImg>
       </S.ImageWrapper>
+      </NavLink>
+
+
             <S.P>상상만 하던 내 마음속의 여행</S.P>
             <S.P>키워드로 검색해 보세요.</S.P>
+
+
       <S.DropDown>
      <span>드롭다운자리</span>
       </S.DropDown>
+
+
 
 
       <S.ThemeTravel>
@@ -63,6 +81,7 @@ const Theme = () => {
           </S.ThemeTravelBanner>
       </S.ThemeTravel>
     </S.Wrapper>
+    
     </>
   );
 };

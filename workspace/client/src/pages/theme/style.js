@@ -1,23 +1,28 @@
 import styled from "styled-components";
 import { flexCenterColumn, flexSpaceAroundCenter} from "../../global/common";
 import theme from "../../global/theme";
+import GlobalStyle from "../../global/global";
+import reset from "styled-reset";
 
 const S = {};
 
     S.Wrapper = styled.div`
         ${flexCenterColumn}
+        margin-top: 1vh;
     `
 
-    S.ImageWrapper = styled.div`
-        flex: 0.7;
+    S.ImageWrapper = styled.nav`
+        /* flex: 0.7; */
+    width: 80vw;
         ${flexCenterColumn}
     `
 
     S.MainImg =styled.div`
-    background-image: url('Guadalupe.jpeg');
-    background-repeat: no-repeat;
+    /* background-image: url('Guadalupe.jpeg'); */
+    background-image: url("/img/picture/sakura.jpeg");
+    background-repeat: repeat;
     background-position: center;
-     width:100vh;
+     width:80vw;
     height:300px;
     ${flexCenterColumn}
     align-content: center;
@@ -25,15 +30,18 @@ const S = {};
     z-index: 100;
     ::before{
       z-index: -100; 
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0,0,0,0.2);
      position: absolute; 
     content: "";
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    opacity: 0.45;
+    opacity: 0.6;
     }
+    /* &a{
+
+    } */
     `
     S.ButtonWrapper = styled.div`
         width: 100%;
@@ -47,6 +55,7 @@ S.P=styled.p`
   margin-top: 10px;
  width: 80%;
  color: gray;
+   font-family: 'Noto Sans KR', sans-serif;
 `
 
 
@@ -79,7 +88,6 @@ margin: auto;
 border-radius: 10px;
 margin-bottom: 5px;
 justify-content: center;
-
 `
 S.ThemeImageWrapper=styled.div`
 margin-right: 1%;
