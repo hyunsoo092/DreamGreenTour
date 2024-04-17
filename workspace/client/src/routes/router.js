@@ -134,7 +134,7 @@ const router = createBrowserRouter([
     element: <Theme />,
     children: [
       {
-        path: "/theme/recommend",
+        path: "/theme/recommend/:id",
         element: <Recommend />,
       },
     ],

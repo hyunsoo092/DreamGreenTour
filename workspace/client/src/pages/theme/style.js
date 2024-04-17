@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenterColumn, flexSpaceAroundCenter} from "../../global/common";
+import { flexCenterColumn, flexCenterRow, flexSpaceAroundCenter} from "../../global/common";
 import theme from "../../global/theme";
 import GlobalStyle from "../../global/global";
 import reset from "styled-reset";
@@ -9,6 +9,7 @@ const S = {};
     S.Wrapper = styled.div`
         ${flexCenterColumn}
         margin-top: 1vh;
+        margin-bottom: 1vh;
     `
 
     S.ImageWrapper = styled.nav`
@@ -43,44 +44,68 @@ const S = {};
 
     } */
     `
-    S.ButtonWrapper = styled.div`
-        width: 100%;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 0 0 100px 0;
-    `
 S.P=styled.p`
   margin-top: 10px;
  width: 80%;
  color: gray;
+ font-size: 20px;
    font-family: 'Noto Sans KR', sans-serif;
+`
+S.DropDownWrap=styled.div`
+width: 80vw;
+margin: auto;
+`
+
+S.DropDown=styled.div`
+/* width:60px; */
+position:relative;
+display:inline-block;
+        &:hover{
+          cursor:pointer;
+          /* color: gray; */
+          .dropdown-content {display: block;}
+          .dropbtn {background-color: #37A551;
+                    color: rgb(24,49,83,1);
+          }//호버 후 배경색
+          } 
+        .dropbtn {
+          background-color: #F5F6F6; //호버 전 배경색
+          color: rgb(24,49,83,1); //글자색
+          padding: 13px 32px 13px 32px;
+          font-size: 18px;
+          width: 10em;
+          border:none;
+          border-radius: 5px;
+        }
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;   //리스트 호버 전 배경색
+          padding : 12px 16px;
+          /* scroll-behavior: auto; */
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          & a {
+              color: rgb(24,49,83,1);
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+           }
+          & a:hover 
+          {background-color: #37A551;
+          display: block;
+          border-radius: 5px;
+          }   //리스트 호버 후 배경색
+        }
 `
 
 
-S.DropDown=styled.div`
-width:60px;
-position:relative;
-display:inline-block;
-&:hover{
-  cursor:pointer;
-  color: gray;
-  .DropDownBox{
-    display: flex;
-  }
-}`
 
 S.ThemeTravel=styled.div`
-    width: 80%;
+    width: 80vw;
     border-radius: 10px;
-    /* ${flexSpaceAroundCenter} */
     background-color: ${({ theme }) => theme.PALLETE.primary["bannerBack"]};
     padding-top:20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
 `
 S.ThemeTravelBanner=styled.div`
 display: flex;
@@ -93,13 +118,18 @@ S.ThemeImageWrapper=styled.div`
 margin-right: 1%;
 margin-left: 1%;
 `
-S.ThemeImage = styled.img`
+S.ThemeImageDiv = styled.div`
 width: 250px;
 height: 250px;
-/* background-color: black; */
 border-radius: 10px;
 box-shadow: 5px 5px 5px gray;
 display: flex;
+
+`
+S.ThemeImage = styled.img`
+width: 250px;
+height: 250px;
+border-radius: 10px;
 
 `
 S.Title=styled.p`
