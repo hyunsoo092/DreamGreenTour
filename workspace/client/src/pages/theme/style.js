@@ -13,13 +13,11 @@ const S = {};
     `
 
     S.ImageWrapper = styled.nav`
-        /* flex: 0.7; */
     width: 80vw;
         ${flexCenterColumn}
     `
 
     S.MainImg =styled.div`
-    /* background-image: url('Guadalupe.jpeg'); */
     background-image: url("/img/picture/sakura.jpeg");
     background-repeat: repeat;
     background-position: center;
@@ -40,24 +38,24 @@ const S = {};
     bottom: 0px;
     opacity: 0.6;
     }
-    /* &a{
-
-    } */
     `
 S.P=styled.p`
-  margin-top: 10px;
+  margin-top: 20px;
  width: 80%;
  color: gray;
  font-size: 20px;
    font-family: 'Noto Sans KR', sans-serif;
+   /* margin-bottom: 10px; */
 `
 S.DropDownWrap=styled.div`
-width: 80vw;
+width: 79vw;
 margin: auto;
+display: flex;
+justify-content: space-between;
+padding-top: 15px;
 `
 
 S.DropDown=styled.div`
-/* width:60px; */
 position:relative;
 display:inline-block;
         &:hover{
@@ -104,48 +102,120 @@ display:inline-block;
 S.ThemeTravel=styled.div`
     width: 80vw;
     border-radius: 10px;
-    background-color: ${({ theme }) => theme.PALLETE.primary["bannerBack"]};
+    background-color: ${({ theme }) => theme.PALLETE.primary["inputBack"]};
     padding-top:20px;
+
+  
 `
 S.ThemeTravelBanner=styled.div`
 display: flex;
 margin: auto;
 border-radius: 10px;
-margin-bottom: 5px;
-justify-content: center;
+padding: 10px 10px 10px 10px;
+justify-content: space-evenly;
+
 `
 S.ThemeImageWrapper=styled.div`
 margin-right: 1%;
 margin-left: 1%;
+display: inline-block;
 `
 S.ThemeImageDiv = styled.div`
-width: 250px;
-height: 250px;
+width: 300px;
+height: 260px;
 border-radius: 10px;
 box-shadow: 5px 5px 5px gray;
 display: flex;
 
 `
 S.ThemeImage = styled.img`
-width: 250px;
-height: 250px;
+width: 300px;
+height: 260px;
 border-radius: 10px;
-
 `
-S.Title=styled.p`
-max-width: 260px;
-height: 4.8em;
-word-wrap: break-word;
-white-space:nowmal;
-line-height: 1.2;
--webkit-line-clamp: 3;
-overflow: hidden;
-color: ${({ theme }) => theme.PALLETE.fontNatural["70"]};
-font-size: ${({ theme }) => theme.FONT_SIZE["h6"]};
-margin-top: 20px;
-
+S.Price=styled.div`
+width: 300px;
+height: 30px;
+padding: 0px 10px 0px 10px;
+font-size: ${({theme}) => theme.FONT_SIZE["h4"]};
+font-weight: 600;
+`
+S.TitleDiv=styled.div`
+width: 300px;
+height: 50px;
+font-size: ${({theme}) => theme.FONT_SIZE["h5"]};
+font-weight: 500;
+.titleSpan{
+  padding: 0px 10px 0px 10px;
+  /* display: -webkit-box; */
+  max-width: calc(100% - 5px);
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space:nowrap;
+  line-height: 1.2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 `
 
+S.HeartIcon = styled.div`
+width: 300px;
+height: 50px;
+display: flex; 
+justify-content: space-between;
+`
+S.SpanTag = styled.span`
+${flexSpaceAroundCenter}
+margin-top: 5px;
+margin-left: 10px;
+font-size: 18px;
+color: #94B396;
+`
+S.Button = styled.button`
+    cursor: pointer;
+    background: none;
+    font-size: 23px;
+    
+    & svg.heartIcon path{
+      color : #37A551
+    }
+`
+S.Input = styled.input`
+  height: 40px;
+  margin-left: 40px;
+  text-align: start;
+
+  width: 400px;
+  padding-left: 20px;
+  border-radius: 10px;
+  background-color: #f5f6f6;
+  border: none;
+  &:hover{
+          border: solid 2px #006516;
+  } 
+  
+`;
+S.Search = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .iconSearch {
+    background: none;
+    font-size: 24px;
+    padding: 4px;
+    margin-left: -45px;
+    cursor: pointer;
+  }
+`;
 
 
+
+
+
+S.Footer = styled.div`
+width: 80vw;
+height: 500px;
+/* background-color:  ${({ theme }) => theme.PALLETE.primary["inputBack"]}; */
+`
 export default S;

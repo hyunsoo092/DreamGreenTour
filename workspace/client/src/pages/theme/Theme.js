@@ -7,6 +7,8 @@ import GlobalStyle from "../../global/global.js";
 import Layout from "../layout/Layout.js";
 import router from "../../routes/router.js";
 import ThemeComponent from "./ThemeComponent";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Theme = () => {
   const [theme, setTheme] = useState([]);
@@ -26,6 +28,18 @@ useEffect(()=>{
 }, [])
 
 
+// const themeView=()=>{
+// const num = Math.ceil(theme.length / 4); 
+// for (let i = 0; i < num; i++) {
+//     return (
+//         <div className="themeTravelBanner" key={i}>
+//             {[theme.slice(i * 4, (i + 1) * 4)].map((themeTrip, j) => (
+//                 <ThemeComponent key={j} themeTrip={themeTrip} getTheme={getTheme} />
+//             ))}
+//       </div>
+//     );
+//   }
+// }
 
   return (
     <>
@@ -44,17 +58,12 @@ useEffect(()=>{
                 </S.MainImg>
       </S.ImageWrapper>
       </NavLink>
-
-
             <S.P>상상만 하던 내 마음속의 여행</S.P>
             <S.P>키워드로 검색해 보세요.</S.P>
-
-
 </S.Wrapper>
 
 <S.DropDownWrap className="dropdownWrap">
       <S.DropDown className="dropdown">
-    
   <button class="dropbtn">테마 선택</button>
   <div class="dropdown-content">
     <a href="#">데이트 코스</a>
@@ -63,19 +72,43 @@ useEffect(()=>{
     <a href="#">겨울</a>
     <a href="#">여름</a>
     <a href="#">봄</a>
-  
 </div>
       </S.DropDown>
+            <S.Search>
+          <S.Input type="text" placeholder="검색어를 입력해 주세요" className="input"/>
+          <FontAwesomeIcon icon={faSearch} className="iconSearch" />
+        </S.Search>
+    
       </S.DropDownWrap>
       
 <S.Wrapper>
-<S.ThemeTravel>
-<S.ThemeTravelBanner>
-  {theme.map((themeTrip,i)=>(
+<S.ThemeTravel >
+<S.ThemeTravelBanner className="ThemeTravelBanner" >
+  {theme.slice(0,4).map((themeTrip,i)=>(
+    <ThemeComponent key={i} themeTrip={themeTrip} getTheme={getTheme}/>
+    
+  ))}
+{/* {themeView} */}
+</S.ThemeTravelBanner>
+
+<S.ThemeTravelBanner className="ThemeTravelBanner" >
+  {theme.slice(4,8).map((themeTrip,i)=>(
     <ThemeComponent key={i} themeTrip={themeTrip} getTheme={getTheme}/>
   ))}
 </S.ThemeTravelBanner>
+<S.ThemeTravelBanner className="ThemeTravelBanner" >
+  {theme.slice(8,12).map((themeTrip,i)=>(
+    <ThemeComponent key={i} themeTrip={themeTrip} getTheme={getTheme}/>
+  ))}
+</S.ThemeTravelBanner>
+
 </S.ThemeTravel>
+</S.Wrapper>
+<S.Wrapper>
+    <S.Footer>
+     <p>푸터</p>
+          </S.Footer>
+
 </S.Wrapper>
     
 </>

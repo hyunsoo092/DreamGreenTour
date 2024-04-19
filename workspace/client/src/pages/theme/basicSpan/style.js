@@ -33,19 +33,19 @@ const sizeCSS = {
     font-size: 32px;
   `,
   small : css`
-    font-size:13px;
+    font-size:18px;
   `
 }
 
 const styleCSS = {
 
   small : css`
-       font-weight: 300;   
+       font-weight: 500;   
     
 `,
   medium : css`
-    font-weight: 400;   
- 
+    font-weight: 600;   
+    padding-bottom:20px;
   `,
   full : css`
     font-weight: 800;

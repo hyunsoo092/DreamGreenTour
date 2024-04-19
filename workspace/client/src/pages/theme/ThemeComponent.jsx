@@ -16,15 +16,20 @@ const ThemeComponent = ({themeTrip,getTheme}) => {
             <S.ThemeImage src={process.env.PUBLIC_URL + '/img/picture/Guadalupe.jpeg'}></S.ThemeImage>
         </S.ThemeImageDiv>
       
-            <div className='wrapper'>
-              <button>
-                <FontAwesomeIcon icon={faHeart}/>
-              </button>
-            </div>
-            <div className='wrapper'>
-            {title}
-            {content}
-            </div>
+            <S.HeartIcon >
+              <S.SpanTag>#데이트 #여행</S.SpanTag>
+                <S.Button>
+                  <FontAwesomeIcon icon={faHeart} className='heartIcon'/>
+                </S.Button>
+            </S.HeartIcon>
+            <S.Price>
+                {content}
+            </S.Price>
+            <S.TitleDiv >
+                 <p className='titleSpan'>
+                 {title}
+                  </p>
+            </S.TitleDiv>
             {/* </S.li> */}
         </Link>
     </S.ThemeImageWrapper>
