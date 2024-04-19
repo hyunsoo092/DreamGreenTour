@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "../../global/theme";
 const S = {};
+
+
 
 // 1번 
 S.Section = styled.div`
@@ -13,9 +14,10 @@ S.Section = styled.div`
 S.ImageWrapper = styled.div`
     width: 100vw;
     height: 50vh;
-    background-image: url(${process.env.PUBLIC_URL}/background.png);
+    background-image: url(${process.env.PUBLIC_URL}/home/background.png);
     background-repeat: no-repeat;
     background-size: cover;   
+    background-position: center;
 `;
 
 S.Wrapper = styled.div`
@@ -25,7 +27,7 @@ S.Wrapper = styled.div`
   margin: 20px 50px 20px 0  ;
   width:  20%;
   height: 90%;
-  background-color: green;
+  background-color: pink;
   
 `
 
@@ -36,6 +38,7 @@ S.LetterWrapper = styled.div`
     line-height: 40px;
     width: 100%;
     height: 20%;
+    
   `
 
 S.ListWrapper = styled.div`
@@ -116,30 +119,59 @@ S.ListWrapper = styled.div`
       font-weight: ${theme.FONT_WEIGHT.bold};
       font-family: ${theme.FONT_FAMILY.heading};
       margin-left: 200px;
-      }
-   `
+      } 
+` 
   
+
   S.region = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    height: 50vh;
-    margin: 60px auto;
+
+.slick-list {
+  position: relative; /* slick-list에 상대 위치 설정 */
+}
+
+  .arrow2 {
+  position: absolute; /* 절대 위치로 설정 */
+  left: 70%;
+  bottom: 100%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+  .arrow1 {
+    position: absolute;
+    left: 73%;
+    bottom: 100%; 
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+    .slick-slide {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: 50vh;
+  margin-top: 60px;
+
+   }
   `
+  
   S.Circle = styled.div`
+  
    position: relative;
-   width: 20%;
-   height: 30vh;
-   border-radius: 50%;
+   width: 15%;
+   height: 70%;
+   border-radius:50%;
    overflow: hidden;
+   
 
   `
   S.Image1 = styled.img`
-   width: 100%;
+   width:  100%;
    height: 100%;
    background-repeat: no-repeat;
    background-size: cover; 
    cursor: pointer;
+   
   `
 
   S.Text = styled.div`
@@ -224,7 +256,7 @@ S.package = styled.div`
 `;
 
 S.middle = styled.div`
-  width: 12vw;
+  width: 15vw;
   cursor: pointer;
   
     
@@ -246,6 +278,16 @@ S.middle = styled.div`
     font-family: ${theme.FONT_FAMILY.heading};
     padding: 7px;
    }
+   
+   .price2 {
+     position: relative;
+     left: 20px;
+     font-size: ${theme.FONT_SIZE.h6};
+     font-weight: ${theme.FONT_WEIGHT.bold};
+     font-family: ${theme.FONT_FAMILY.heading};
+     padding: 7px;
+     color: red;
+   }
 
 `
 S.block = styled.div`
@@ -258,6 +300,7 @@ S.Image2 = styled.img`
   width: 240px;
   height: 180px;
   border-radius: 8%;
+  cursor: pointer;
   
 `;
 
@@ -312,12 +355,32 @@ S.keyword = styled.div`
     font-size: 32px;
     border-bottom: 2px solid red;
   }
-  span {
-    margin-top: 10px;
-  }
+  
 `
 
 S.plays = styled.div`
+
+.slick-list {
+  position: relative; /* slick-list에 상대 위치 설정 */
+}
+
+  .arrow2 {
+  position: absolute; /* 절대 위치로 설정 */
+  left: 70%;
+  bottom: 100%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+  .arrow1 {
+    position: absolute;
+    left: 73%;
+    bottom: 100%; 
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .slick-slide {
   width: 70vw;
   display: flex;
   gap: 40px;
@@ -325,13 +388,95 @@ S.plays = styled.div`
   justify-content: center;
   margin: 0 auto;
   margin-top: 60px;  
+  }
 `
+
+
+S.DropdownContainer = styled.div`
+  position: relative;
+  text-align: center;
+`;
+
+ S.DropdownButton = styled.div`
+  cursor: pointer;
+  color: red;
+  border-bottom: 2px solid red;
+  font-size: ${theme.FONT_SIZE.h3};
+  font-weight: ${theme.FONT_WEIGHT.regular};
+  font-family: ${theme.FONT_FAMILY.heading};
+`;
+
+S.Menu = styled.div`
+  background: gray;
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  width: 200px;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  z-index: 9;
+
+  &:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 12px solid transparent;
+    border-top-width: 0;
+    border-bottom-color: gray;
+  }
+
+  ${({ isDropped }) =>
+    isDropped &&
+    css`
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+      left: 50%;
+    `};
+`;
+
+S.Ul = styled.ul`
+  & > li {
+    margin-bottom: 10px;
+  }
+
+  & > li:first-of-type {
+    margin-top: 10px;
+  }
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+ S.Li = styled.li``;
+
+  S.LinkWrapper = styled.a`
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+`;
+
+
 
 S.play = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
   position: relative;
+  
  
   
   .big {
@@ -339,7 +484,8 @@ S.play = styled.div`
   font-weight: ${theme.FONT_WEIGHT.bold};
   font-family: ${theme.FONT_FAMILY.heading};
   position: relative;
-  right: 15%;
+  left: 30%;
+  padding: 5px;
   
   }
   .small {
@@ -347,15 +493,24 @@ S.play = styled.div`
   font-weight: ${theme.FONT_WEIGHT.bold};
   font-family: ${theme.FONT_FAMILY.heading};
   position: relative;
-  right: 15%;
+  left: 32%;
+  margin-bottom: 15px;
   }
+
 `
 S.Image3 = styled.img`
-  width: 17vw;
+  width: 20vw;
   height: 35vh;
   border-radius: 10%;
   position: relative;
-  right: 16%;
+  left: 30%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 S.Grids = styled.div`
@@ -410,6 +565,7 @@ S.Grid = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  cursor: pointer;
   .theme {
       font-size : 12px;
       border: 2px solid #F06C5E;
@@ -429,6 +585,8 @@ S.Grid = styled.div`
    font-size: ${theme.FONT_SIZE.h6};
   font-weight: ${theme.FONT_WEIGHT.regular};
   font-family: ${theme.FONT_FAMILY.heading};
+  padding: 5px;
+  margin: 0 auto;
   }
 
   button {
@@ -439,14 +597,22 @@ S.Grid = styled.div`
     position: relative;
     border-bottom:5px solid grey;
     width: fit-content; 
+    cursor: pointer;
     }
 `
 
 S.Image4 = styled.img`
-  width: 15vw;
+  width: 18vw;
   height: 30vh;
   border-radius: 10%;
-`
+  cursor: pointer;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
  
 S.end = styled.div`
   width: 80vw;

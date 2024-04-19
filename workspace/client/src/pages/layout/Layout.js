@@ -2,8 +2,8 @@ import React from "react";
 import S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import Home from '../home/Home'
+import { Link, Outlet } from "react-router-dom";
+
 
 
 const Layout = () => {
@@ -41,8 +41,8 @@ const Layout = () => {
         <Link to={"/theme"}>테마</Link>
         <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
+      <Outlet />
       
-      <Home/>
     </S.Wrapper>
   );
 };
