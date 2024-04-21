@@ -1,39 +1,207 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import useDetectClose from '../../hooks/useDetectClose ';
 import S from './style';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'; // 빈 하트
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons'; // 속이 찬 하트
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faStar as full, faChevronLeft , faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faStar as full, faChevronLeft , faChevronRight ,faPlus , faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faStar as empty } from '@fortawesome/free-regular-svg-icons'
 import { Outlet, useNavigate } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import moment from "moment";
+
+
 
 
 const Home = () => {
+
+//4 드롭다운
+const [travelIsOpen, travelRef, travelHandler] = useDetectClose(false);
+const [hotelIsOpen, hotelRef, hotelHandler] = useDetectClose(false);
+const [myPageIsOpen, myPageRef, myPageHandler] = useDetectClose(false);
+const [boardIsOpen, boardRef, boardHandler] = useDetectClose(false);
+const [cacl1IsOpen, cacl1Ref, cacl1Handler] = useDetectClose(false);
+
+const [hotelContent, setHotelContent] = useState('서울');
+const [travelContent, setTravelContent] = useState('출발지➡️도착지');
+const [myPageContent, setMyPageContent] = useState('사랑하는 사람과');
+const [boardContent, setBoardContent] = useState('평화롭게');
+const [result, setResult] = useState(0);
+
+
+const handleMenuClick1 = (menuText) => {
+  setMyPageContent(menuText);
+};
+
+const handleMenuClick2 = (menuText) => {
+  setBoardContent(menuText);
+};
+
+const handleMenuClick3 = (menuText) => {
+  setTravelContent(menuText);
+};
+
+const handleMenuClick4 = (menuText) => {
+  setHotelContent(menuText);
+};
+
+const increase = () => {
+  setResult(result+1)
+};
+
+const decrease = () => {
+  setResult(result-1)
+};
+
+// 클릭 이벤트 핸들러를 감싸는 새로운 함수를 만들어서 이벤트 전파를 막습니다.
+const stopPropagation = (e) => {
+  e.stopPropagation();
+};
+
+const notexit = useCallback((e) => {
+  stopPropagation(e);
+}, []);
+
+// 달력
+const [selectedDate, setSelectedDate] = useState(new Date());
+const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
+const handleCalendarButtonClick = () => {
+  setIsCalendarOpen(!isCalendarOpen);
+};
+
+const handleDateChange = (date) => {
+  setSelectedDate(date);
+  setIsCalendarOpen(false); // 달력을 선택한 후에는 닫도록 설정
+};
+
 
 // 맨 위 박스 
   const [contentType, setContentType] = useState('flight');
 
   let contentToShow;
 
-
    if (contentType === 'flight') {
     contentToShow = (
-      <>
-        <button>도착지</button>
-        <button>날짜</button>
-        <button>인원</button>
-      </> 
-    );
-  } else if (contentType === 'hotel') {
+   <>
+    <S.DropdownContainer2>
+       <button onClick={travelHandler} ref={travelRef}>{travelContent}</button> 
+    
+     <S.Menu2 isDropped={travelIsOpen}>
+        <S.Ul2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick3('인천➡️김해')}>인천➡️김해</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️안양')}>김포➡️안양</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️원주')}>여수➡️원주</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️원주')}>김포➡️원주</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️인천')}>여수➡️인천</S.LinkWrapper2>
+          </S.Li2>
+          
+        </S.Ul2>
+     </S.Menu2>
+
+    </S.DropdownContainer2>
+
+    <S.CalendarContainer>
+         <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
+         <S.CalendarWrapper isOpen={isCalendarOpen}>
+           {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
+         </S.CalendarWrapper>
+     </S.CalendarContainer>
+      
+    <S.DropdownContainer2>
+       <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
+    
+       <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
+        <S.Ul3>
+          <S.Li3>
+              <p>인원수</p>
+              <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
+              {result}
+              <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
+          </S.Li3>
+         
+        </S.Ul3>
+     </S.Menu2>
+
+    </S.DropdownContainer2>
+  </>
+
+    )
+}
+
+
+   else if (contentType === 'hotel') {
     contentToShow = (
       <>
-        <button>어디로 떠나세요?</button>
-        <button>날짜</button>
-        <button>인원</button>
+       <S.DropdownContainer2>
+       <button onClick={hotelHandler} ref={hotelRef}>{hotelContent}</button> 
+    
+      <S.Menu2 isDropped={hotelIsOpen}>
+        <S.Ul2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('서울')}>서울</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('경기도')}>경기도</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('충청도')}>충청도</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('강원도')}>강원도</S.LinkWrapper2>
+          </S.Li2>
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('전라도')}>전라도</S.LinkWrapper2>
+          </S.Li2>
+    
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('경상도')}>경상도</S.LinkWrapper2>
+          </S.Li2>
+          
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('제주도')}>제주도</S.LinkWrapper2>
+          </S.Li2>
+        </S.Ul2>
+
+     </S.Menu2>
+     </S.DropdownContainer2>
+
+     <S.CalendarContainer>
+         <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
+         <S.CalendarWrapper isOpen={isCalendarOpen}>
+           {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
+         </S.CalendarWrapper>
+     </S.CalendarContainer>
+        
+        <S.DropdownContainer2>
+       <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
+    
+       <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
+        <S.Ul3>
+          <S.Li3>
+              <p>인원수</p>
+              <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
+              {result}
+              <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
+          </S.Li3>
+         
+        </S.Ul3>
+     </S.Menu2>
+
+   </S.DropdownContainer2>
       </>
     );
   }
@@ -911,14 +1079,140 @@ else if (TravelType === 'kangwon') {
 }
 
 
-//4 드롭다운
-const [myPageIsOpen, myPageRef, myPageHandler] = useDetectClose(false);
-const [boardIsOpen, boardRef, boardHandler] = useDetectClose(false);
-const [buttonText, setButtonText] = useState('마이페이지1');
 
-const handleMenuClick = (menuText) => {
-  setButtonText(menuText); // update button text when a menu item is clicked
+
+const checkScreen = () => {
+  let content = null;
+
+  if (myPageContent === '사랑하는 사람과' && boardContent === '평화롭게') {
+    content = (
+          <Slider {...settings}>
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme1.png`} alt="Description"/>
+              <p className='small'>[순우리여행]</p>
+              <p className='big'>쏠라티 단독 한려수도권 2박3일</p>
+              <p className='big' style={{ color: 'red' }}>1,050,000원</p>
+
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme2.png`} alt="Description"/>
+              <p className='small'>#통영</p>
+              <p className='big'>쏠라티 단독 서해안권 2박3일</p>
+
+              <p className='big' style={{ color: 'red' }}>970,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme3.png`} alt="Description"/>
+              <p className='small'>#안동</p>
+              <p className='big'>단독 동해안권 2박3일</p>
+              
+              <p className='big' style={{ color: 'red' }}>950,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme4.png`} alt="Description"/>
+              <p className='small'>#남도</p>
+              <p className='big'>남도 4박5일</p>
+          
+              <p className='big' style={{ color: 'red' }}>1,900,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme5.png`} alt="Description"/>
+              <p className='small'>#숙박여행</p>
+              <p className='big'>내생애 꼭 가봐야할 한려수도권 2박3일</p>
+           
+              <p className='big' style={{ color: 'red' }}>725,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme6.png`} alt="Description"/>
+              <p className='small'>#동해안</p>
+              <p className='big'>내생애 꼭 가봐야할 동해안권 2박3일</p>
+              
+              <p className='big' style={{ color: 'red' }}>670,000원</p>
+             </S.play>
+             </Slider>
+    );
+  }
+
+  else if (myPageContent === '가족과' && boardContent === '신나게') {
+    content = (
+          <Slider {...settings}>
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme7.png`} alt="Description"/>
+              <p className='small'>[경남테마여행]</p>
+              <p className='big'>요트투어 in 통영 한산도 1박2일 여행</p>
+              <p className='big' style={{ color: 'red' }}>1,250,000원</p>
+
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme8.png`} alt="Description"/>
+              <p className='small'>#현대홈쇼핑</p>
+              <p className='big'>강릉.목호 쾌속선 2박3일</p>
+              
+              <p className='big' style={{ color: 'red' }}>950,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme9.png`} alt="Description"/>
+              <p className='small'>#남도</p>
+              <p className='big'>크루즈 울릉도 2박3일</p>
+          
+              <p className='big' style={{ color: 'red' }}>1,900,000원</p>
+             </S.play>
+
+            
+
+             </Slider>
+    );
+  }
+
+  else if (myPageContent === '친구들과' && boardContent === '감성있게') {
+    content = (
+          <Slider {...settings}>
+           
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme10.png`} alt="Description"/>
+              <p className='small'>#에어카텔</p>
+              <p className='big'>호캉스 2박3일</p>
+              
+              <p className='big' style={{ color: 'red' }}>1,000,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme11.png`} alt="Description"/>
+              <p className='small'>#개별집결</p>
+              <p className='big'>휴양지 VIBE 여행</p>
+          
+              <p className='big' style={{ color: 'red' }}>2,900,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme12.png`} alt="Description"/>
+              <p className='small'>#숙박여행</p>
+              <p className='big'>내생애 꼭 가봐야할 한려수도권 2박3일</p>
+           
+              <p className='big' style={{ color: 'red' }}>725,000원</p>
+             </S.play>
+
+             <S.play>
+              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme13.png`} alt="Description"/>
+              <p className='small'>#동해안</p>
+              <p className='big'>내생애 꼭 가봐야할 동해안권 2박3일</p>
+              
+              <p className='big' style={{ color: 'red' }}>670,000원</p>
+             </S.play>
+             </Slider>
+    );
+  }
+
+  return content;
 };
+
 
 
 // 메인시작
@@ -1023,95 +1317,47 @@ const handleMenuClick = (menuText) => {
         <S.keyword>
 
         <S.DropdownContainer>
-        <S.DropdownButton onClick={myPageHandler} ref={myPageRef}>
-          사랑하는 사람과
-        </S.DropdownButton>
+       
+        <S.DropdownButton onClick={myPageHandler} ref={myPageRef}> {myPageContent} </S.DropdownButton>
+
         <S.Menu isDropped={myPageIsOpen}>
           <S.Ul>
             <S.Li>
-              <S.LinkWrapper href="#1-1" onClick={() => handleMenuClick('마이페이지1')}>사랑하는 사람과</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick1('사랑하는 사람과')}>사랑하는 사람과</S.LinkWrapper>
             </S.Li>
             <S.Li>
-              <S.LinkWrapper href="#1-2" onClick={() => handleMenuClick('마이페이지2')}>가족과</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick1('가족과')}>가족과</S.LinkWrapper>
             </S.Li>
             <S.Li>
-              <S.LinkWrapper href="#1-3" onClick={() => handleMenuClick('마이페이지3')}>친구들과</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick1('친구들과')}>친구들과</S.LinkWrapper>
             </S.Li>
           </S.Ul>
         </S.Menu>
-      </S.DropdownContainer>
+        </S.DropdownContainer>
 
       <S.DropdownContainer>
-        <S.DropdownButton onClick={boardHandler} ref={boardRef}>
-          평화롭게
-        </S.DropdownButton>
+        <S.DropdownButton onClick={boardHandler} ref={boardRef}> {boardContent} </S.DropdownButton>
         <S.Menu isDropped={boardIsOpen}>
           <S.Ul>
             <S.Li>
-              <S.LinkWrapper href="#2-1">평화롭게</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick2('평화롭게')}>평화롭게</S.LinkWrapper>
             </S.Li>
             <S.Li>
-              <S.LinkWrapper href="#2-2">신나게</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick2('신나게')}>신나게</S.LinkWrapper>
             </S.Li>
             <S.Li>
-              <S.LinkWrapper href="#2-3">감성있게</S.LinkWrapper>
+              <S.LinkWrapper onClick={() => handleMenuClick2('감성있게')}>감성있게</S.LinkWrapper>
             </S.Li>
           </S.Ul>
            </S.Menu>
         </S.DropdownContainer>
+        
         <span>떠나고 싶어요</span>
+
         </S.keyword>
 
           <S.plays>
-          <Slider {...settings}>
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme1.png`} alt="Description"/>
-              <p className='small'>[순우리여행]</p>
-              <p className='big'>쏠라티 단독 한려수도권 2박3일</p>
-              <p className='big' style={{ color: 'red' }}>1,050,000원</p>
-
-             </S.play>
-
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme2.png`} alt="Description"/>
-              <p className='small'>#통영</p>
-              <p className='big'>쏠라티 단독 서해안권 2박3일</p>
-
-              <p className='big' style={{ color: 'red' }}>970,000원</p>
-             </S.play>
-
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme3.png`} alt="Description"/>
-              <p className='small'>#안동</p>
-              <p className='big'>단독 동해안권 2박3일</p>
-              
-              <p className='big' style={{ color: 'red' }}>950,000원</p>
-             </S.play>
-
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme4.png`} alt="Description"/>
-              <p className='small'>#남도</p>
-              <p className='big'>남도 4박5일</p>
-          
-              <p className='big' style={{ color: 'red' }}>1,900,000원</p>
-             </S.play>
-
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme5.png`} alt="Description"/>
-              <p className='small'>#숙박여행</p>
-              <p className='big'>내생애 꼭 가봐야할 한려수도권 2박3일</p>
-           
-              <p className='big' style={{ color: 'red' }}>725,000원</p>
-             </S.play>
-
-             <S.play>
-              <S.Image3 src={`${process.env.PUBLIC_URL}/home/theme/theme6.png`} alt="Description"/>
-              <p className='small'>#동해안</p>
-              <p className='big'>내생애 꼭 가봐야할 동해안권 2박3일</p>
-              
-              <p className='big' style={{ color: 'red' }}>670,000원</p>
-             </S.play>
-             </Slider>
+            {checkScreen()}
           </S.plays>
 
           <S.Grids>

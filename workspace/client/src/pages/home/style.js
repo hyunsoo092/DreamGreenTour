@@ -67,17 +67,19 @@ S.ListWrapper = styled.div`
     justify-content: space-around;
     gap: 8px;
     margin: 15px 0 15px 0 ;
-    button {
+    
+    
+      button {
       font-size: ${theme.FONT_SIZE.h7};
       font-weight: ${theme.FONT_WEIGHT.regular};
       font-family: ${theme.FONT_FAMILY.body};
       
-    
         height: 90%;
         width: 90%;
         margin: 0 auto;
         cursor: pointer;
-    }
+      }
+    
   `
 
   S.ButtonWrapper = styled.div`
@@ -277,7 +279,10 @@ S.middle = styled.div`
     font-weight: ${theme.FONT_WEIGHT.bold};
     font-family: ${theme.FONT_FAMILY.heading};
     padding: 7px;
-   }
+    svg path {
+    fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
+      }
+  }
    
    .price2 {
      position: relative;
@@ -313,6 +318,10 @@ S.icon = styled.div`
   
   button {
     cursor: pointer;
+    & path {
+      color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    }
+
   }
   `
 
@@ -468,7 +477,105 @@ S.Ul = styled.ul`
   font-size: 16px;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 `;
+
+// 맨 위 input box 
+
+S.DropdownContainer2= styled.div`
+  position: relative;
+  text-align: center;
+  height: 100%;
+`;
+
+
+S.Menu2 = styled.div`
+  background: white;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 200px;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  z-index: 9;
+
+  ${({ isDropped }) =>
+    isDropped &&
+    css`
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+      left: 50%;
+    `};
+`;
+
+S.Ul2 = styled.ul`
+  & > li {
+    margin-bottom: 10px;
+  }
+
+  & > li:first-of-type {
+    margin-top: 10px;
+  }
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+`;
+
+ S.Li2 = styled.li`
+  border: 2px solid black;
+  padding: 5px;
+ `;
+
+  S.LinkWrapper2 = styled.a`
+  cursor: pointer;
+`;
+
+S.Ul3 = styled.ul`
+  & > li {
+    margin-bottom: 10px;
+  }
+
+  & > li:first-of-type {
+    margin-top: 10px;
+  }
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  
+`;
+
+S.Li3 = styled.li`
+  display: flex;
+  gap: 15px;
+  align-items: center; /* 세로 중앙 정렬 추가 */
+  
+  p {
+    white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 설정 */
+    margin-right: 15px; /* 아이콘과의 간격을 조절할 수 있습니다. */
+  }
+  
+  button {
+    font-size: 20px;
+  }
+`;
+
 
 
 
@@ -640,5 +747,31 @@ S.icons = styled.div`
     line-height: 1.5; /* 예시로 줄 간격을 1.5배로 설정 */
   }
 `
+
+// 달력
+S.CalendarContainer = styled.div`
+    position: relative;
+        height: 90%;
+        width: 90%;
+        margin: 0 auto;
+        cursor: pointer;  
+           button {  
+             font-size: ${theme.FONT_SIZE.h7};
+             font-weight: ${theme.FONT_WEIGHT.regular};
+             font-family: ${theme.FONT_FAMILY.body};
+             width: 100%;
+
+    }
+`;
+
+
+S.CalendarWrapper = styled.div`
+z-index: 11;
+position: absolute;
+top: 100%;
+left: -20%;
+display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+
 
 export default S;
