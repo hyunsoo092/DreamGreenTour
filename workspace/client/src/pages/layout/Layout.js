@@ -2,7 +2,10 @@ import React from "react";
 import S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
+
+
 const Layout = () => {
   return (
     <S.Wrapper>
@@ -36,8 +39,10 @@ const Layout = () => {
         <Link to={"/tour"}>여행</Link>
         <Link to={"/review"}>후기</Link>
         <Link to={"/theme"}>테마</Link>
-        <Link to={"/airline"}>항공/숙박</Link>
+        <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
+      <Outlet />
+      
     </S.Wrapper>
   );
 };
