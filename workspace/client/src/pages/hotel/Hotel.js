@@ -5,6 +5,7 @@ const Hotel = () => {
   return (
     <div>
       숙박 페이지
+      
       <Outlet />
     </div>
   );

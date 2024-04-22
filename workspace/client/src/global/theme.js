@@ -87,6 +87,13 @@ theme.FONT_SIZE = {
   h9: "12px",
 };
 
+theme.FONT_FAMILY = {
+  heading: "'Noto Sans KR', sans-serif",
+  body: "'Inter', sans-serif",
+  alternate: "'Montserrat', sans-serif",
+  secondary: "'Pretendard', sans-serif",
+};
+
 theme.FONT_WEIGHT = {
   light: "300",
   demiLight: "350",

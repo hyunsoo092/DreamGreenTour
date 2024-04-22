@@ -84,4 +84,9 @@ S.Menu = styled.div`
   border-right: 1px solid lightgray;
 `;
 
+S.Home = styled.div`
+  
+`
+
+
 export default S;

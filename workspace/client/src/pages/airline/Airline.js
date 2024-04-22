@@ -7,7 +7,9 @@ import S from "./style";
 import TapComponent from "./TapComponent";
 import AirWeekSale from "./AirWeekSale";
 
+ 
 const Airline = () => {
+
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle />
@@ -41,6 +43,7 @@ const Airline = () => {
             </>
         </ThemeProvider>
     );
+
 };
 
 export default Airline;
