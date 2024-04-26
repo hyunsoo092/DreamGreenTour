@@ -41,14 +41,19 @@ const styleCSS = {
 
   small : css`
        font-weight: 500;   
-    
+       padding:20px;
+    font-family: ${({theme})=>theme.FONT_FAMILY.alternate};
+  
 `,
   medium : css`
     font-weight: 600;   
-    padding-bottom:20px;
+    padding:20px;
+    font-family: ${({theme})=>theme.FONT_FAMILY.alternate};
   `,
   full : css`
     font-weight: 800;
+    padding:20px;
+    font-family: ${({theme})=>theme.FONT_FAMILY.alternate};
     
   `
 }

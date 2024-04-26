@@ -10,7 +10,7 @@ const ThemeComponent = ({themeTrip,getTheme}) => {
     const {id}=themeTrip;
   return (
     <S.ThemeImageWrapper>
-      <Link to={`/theme/recommend/${id}`}>
+      <Link to={`/recommend/${id}`}>
             {/* <S.li> */}
         <S.ThemeImageDiv >    
             <S.ThemeImage src={process.env.PUBLIC_URL + '/img/picture/Guadalupe.jpeg'}></S.ThemeImage>

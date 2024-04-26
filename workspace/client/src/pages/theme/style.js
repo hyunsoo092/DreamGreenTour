@@ -44,7 +44,7 @@ S.P=styled.p`
  width: 80%;
  color: gray;
  font-size: 20px;
-   font-family: 'Noto Sans KR', sans-serif;
+   font-family: ${theme.FONT_FAMILY.secondary};
    /* margin-bottom: 10px; */
 `
 S.DropDownWrap=styled.div`
@@ -53,11 +53,13 @@ margin: auto;
 display: flex;
 justify-content: space-between;
 padding-top: 15px;
+font-family: ${theme.FONT_FAMILY.secondary};
 `
 
 S.DropDown=styled.div`
 position:relative;
 display:inline-block;
+font-family: ${theme.FONT_FAMILY.secondary};
         &:hover{
           cursor:pointer;
           /* color: gray; */
@@ -113,7 +115,7 @@ margin: auto;
 border-radius: 10px;
 padding: 10px 10px 10px 10px;
 justify-content: space-evenly;
-
+font-family: ${theme.FONT_FAMILY.secondary};
 `
 S.ThemeImageWrapper=styled.div`
 margin-right: 1%;
@@ -171,6 +173,7 @@ margin-top: 5px;
 margin-left: 10px;
 font-size: 18px;
 color: #94B396;
+font-family: ${theme.FONT_FAMILY.alternate};
 `
 S.Button = styled.button`
     cursor: pointer;
@@ -185,7 +188,7 @@ S.Input = styled.input`
   height: 40px;
   margin-left: 40px;
   text-align: start;
-
+  font-family: ${theme.FONT_FAMILY.secondary};
   width: 400px;
   padding-left: 20px;
   border-radius: 10px;
