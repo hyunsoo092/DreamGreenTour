@@ -24,6 +24,7 @@ import HBooking from "../pages/hotel/booking/HBooking";
 import HTerms from "../pages/hotel/terms/HTerms";
 import HPayment from "../pages/hotel/payment/HPayment";
 import Recommend from "../pages/theme/recommend/Recommend";
+import Join from "../pages/join/Join";
 
 const router = createBrowserRouter([
   {
@@ -33,14 +34,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
 
       {
@@ -52,6 +45,18 @@ const router = createBrowserRouter([
         element: <Loading />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/join",
+    element: <Join />,
   },
   {
     path: "/mypage",
