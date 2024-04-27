@@ -7,6 +7,7 @@ import S from "./style";
 import TapComponent from "./TapComponent";
 import AirWeekSale from "./AirWeekSale";
 
+ 
 const Airline = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -36,11 +37,12 @@ const Airline = () => {
         <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
       </S.AirBanner1>
 
-      <>
-        <AirWeekSale />
-      </>
-    </ThemeProvider>
-  );
+            <>
+                <AirWeekSale />
+            </>
+        </ThemeProvider>
+    );
+
 };
 
 export default Airline;
