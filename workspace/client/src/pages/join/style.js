@@ -59,6 +59,9 @@ S.AllCheck = styled.div`
     width: 24px;
     height: 24px;
     margin-right: 10px;
+    & path {
+      color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    }
   }
 `;
 
@@ -86,6 +89,9 @@ S.Check = styled.div`
     width: 24px;
     height: 24px;
     margin-right: 10px;
+    & path {
+      color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    }
   }
 `;
 

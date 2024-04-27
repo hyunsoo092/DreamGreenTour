@@ -25,7 +25,6 @@ import HTerms from "../pages/hotel/terms/HTerms";
 import HPayment from "../pages/hotel/payment/HPayment";
 import Recommend from "../pages/theme/recommend/Recommend";
 import Join from "../pages/join/Join";
-import Approve from "../pages/approve/Approve";
 
 const router = createBrowserRouter([
   {
@@ -58,10 +57,6 @@ const router = createBrowserRouter([
   {
     path: "/join",
     element: <Join />,
-  },
-  {
-    path: "/approve",
-    element: <Approve />,
   },
   {
     path: "/mypage",

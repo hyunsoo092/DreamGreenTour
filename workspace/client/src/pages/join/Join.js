@@ -22,7 +22,7 @@ const Join = () => {
 
   const handleApprovePage = () => {
     if (essential1 && essential2 && essential3) {
-      navigate("/approve");
+      navigate("/register");
     }
   };
 
