@@ -22,14 +22,18 @@ const Home = () => {
 //4 드롭다운
 const [travelIsOpen, travelRef, travelHandler] = useDetectClose(false);
 const [hotelIsOpen, hotelRef, hotelHandler] = useDetectClose(false);
+
 const [myPageIsOpen, myPageRef, myPageHandler] = useDetectClose(false);
 const [boardIsOpen, boardRef, boardHandler] = useDetectClose(false);
 const [cacl1IsOpen, cacl1Ref, cacl1Handler] = useDetectClose(false);
 
 const [hotelContent, setHotelContent] = useState('서울');
 const [travelContent, setTravelContent] = useState('출발지➡️도착지');
+
+
 const [myPageContent, setMyPageContent] = useState('사랑하는 사람과');
 const [boardContent, setBoardContent] = useState('평화롭게');
+
 const [result, setResult] = useState(0);
 
 
@@ -88,31 +92,31 @@ const handleDateChange = (date) => {
    if (contentType === 'flight') {
     contentToShow = (
    <>
-    <S.DropdownContainer2>
-       <button onClick={travelHandler} ref={travelRef}>{travelContent}</button> 
-    
-     <S.Menu2 isDropped={travelIsOpen}>
-        <S.Ul2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('인천➡️김해')}>인천➡️김해</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️안양')}>김포➡️안양</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️원주')}>여수➡️원주</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️원주')}>김포➡️원주</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️인천')}>여수➡️인천</S.LinkWrapper2>
-          </S.Li2>
-          
-        </S.Ul2>
-     </S.Menu2>
+      <S.DropdownContainer2>
+        <button onClick={travelHandler} ref={travelRef}>{travelContent}</button> 
+      
+      <S.Menu2 isDropped={travelIsOpen}>
+          <S.Ul2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('인천➡️김해')}>인천➡️김해</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️안양')}>김포➡️안양</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️원주')}>여수➡️원주</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️원주')}>김포➡️원주</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️인천')}>여수➡️인천</S.LinkWrapper2>
+            </S.Li2>
+            
+          </S.Ul2>
+      </S.Menu2>
 
-    </S.DropdownContainer2>
+      </S.DropdownContainer2>
 
     <S.CalendarContainer>
          <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
