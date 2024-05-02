@@ -2,19 +2,21 @@ import styled, { css } from "styled-components";
 import theme from "../../global/theme";
 const S = {};
 
-
-
-S.div=styled.div`
-
-`
-
 S.div1 = styled.div`
   width: 100vw;
-  margin-bottom: 100px;
-
+  height: 50vh;
+  margin-bottom:100px;
+  
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    width: 100vw;
+    margin-bottom: -300px;
+    
+  }
 
   .slick-list {
+
   position: relative; /* slick-list에 상대 위치 설정 */
+
 }
 
   .arrow2 {
@@ -24,6 +26,18 @@ S.div1 = styled.div`
   font-size: 20px;
   cursor: pointer;
   z-index: 2; 
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    
+     left: 20%;
+     top:-20%;
+     font-size: 15px;
+     cursor: pointer;
+     z-index: 2;
+     background: transparent;
+     
+  
+  }
 }
 
   .arrow1 {
@@ -33,10 +47,22 @@ S.div1 = styled.div`
     font-size: 20px;
     cursor: pointer;
     z-index: 2; 
+    
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+     left: 24%;
+     top: -20%;
+     font-size: 15px;
+     cursor: pointer;
+     z-index: 2;
+     background: transparent;
+   
+    }
   }
 `
   
 S.ImageWrapper = styled.div`
+   margin-top: 10px;
     width: 100%;
     height: 50vh;
     overflow: hidden;
@@ -48,30 +74,57 @@ S.ImageWrapper = styled.div`
     object-position: center; /* 이미지를 가운데로 정렬 */
     background-repeat: no-repeat; /* 이미지 반복 없이 한 번만 표시 */
     background-size: contain; /* 이미지를 영역에 맞게 확대 또는 축소 */
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      width: 100%; /* 이미지의 너비를 50%로 설정 */
+      height: auto; /* 이미지의 높이는 자동으로 조정 */
+  }
    }
 `;
 
 
 S.travel = styled.div`
-  @media (min-width: 414px) {
+ 
   display: flex;
   align-content: space-around;  
   width: 100%;
-  }
+  margin-bottom: 50px;
 
-  @media (max-width: 414px) {
-    display: flex;
-    flex-direction: column;
 
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
   }
+ 
 `
 
 S.DropdownContainer1= styled.div`
   position: relative;
+  top: 50%;
   text-align: center;
   width: 15%;
   height: 10vh;
   margin-right: 200px;
+  display: flex;
+
+  button {
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid green;
+    font-size: 20px;
+    
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  position: absolute;
+  text-align: center;
+  top: 23%;
+  width: 24%;
+  height: 10vh;
+
   display: flex;
   button {
     width: 100%;
@@ -80,6 +133,7 @@ S.DropdownContainer1= styled.div`
     border: 2px solid green;
     font-size: 20px;
     
+    }
   }
 `;
 
@@ -140,7 +194,7 @@ S.Ul1 = styled.ul`
 S.DropdownContainer2= styled.div`
   position: relative;
   text-align: center;
-  width: 15%;
+  width: 20%;
   height: 10vh;
   display: flex;
   button {
@@ -149,6 +203,25 @@ S.DropdownContainer2= styled.div`
     cursor: pointer;
     border: 2px solid green;
     font-size: 20px;
+    
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  position: absolute;
+  text-align: center;
+  top: 23%;
+  right: 50%;
+  width: 24%;
+  height: 10vh;
+  display: flex;
+  button {
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid green;
+    font-size: 20px;
+    
+    }
   }
 `;
 
@@ -224,9 +297,29 @@ S.CalendarContainer = styled.div`
              cursor: pointer;
              color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
              
-             
-
     }
+
+    
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+         width: 24%;
+        height: auto;
+        right: 24%;
+        margin: 0 auto;
+        cursor: pointer;  
+        border: 2px solid green;
+           button {  
+             font-size: ${theme.FONT_SIZE.h6};
+             font-weight: ${theme.FONT_WEIGHT.regular};
+             font-family: ${theme.FONT_FAMILY.body};
+             width: 100%;
+             height: 10vh;
+             background-color: white;
+             cursor: pointer;
+             color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+             
+    }
+  }
 `;
 
 
@@ -235,9 +328,20 @@ z-index: 11;
 position: absolute;
 top: 100%;
 display: ${(props) => (props.isOpen ? "block" : "none")};
+
+@media screen and (min-width: 200px) and (max-width: 450px) {
+  z-index: 11;
+position: absolute;
+transform: scale(0.5);
+left: -130%;
+top: -50%;
+
+display: ${(props) => (props.isOpen ? "block" : "none")};
+}
 `;
 
 S.ButtonWrapper = styled.div`
+    
     width: 15%;
     height: 20%;
     button {
@@ -252,9 +356,27 @@ S.ButtonWrapper = styled.div`
       background-color:${({ theme }) => theme.PALLETE.primary["mainGreen100"]};  
       cursor: pointer;
     }
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute ;
+    left: 75%;
+    width: 24%;
+    height: 20%;
+    button {
+      font-size: ${theme.FONT_SIZE.h5};
+      font-weight: ${theme.FONT_WEIGHT.regular};
+      font-family: ${theme.FONT_FAMILY.body};
+    
+      width: 90%;
+      height: 10vh;
+      margin-left: 14px;
+      border-radius: 8px;
+      background-color:${({ theme }) => theme.PALLETE.primary["mainGreen100"]};  
+      cursor: pointer;
+    }
+    }
+    
   `
-
-
   S.week = styled.div`
     width: 90vw;
     .best {
@@ -273,10 +395,32 @@ S.ButtonWrapper = styled.div`
     font-weight: ${theme.FONT_WEIGHT.regular};
     font-family: ${theme.FONT_FAMILY.body};
     }
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      margin-top: 80px;
+      width: 90vw;
+    .best {
+      margin-bottom: 15px;
+      font-size: ${theme.FONT_SIZE.h3};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    & path {
+      color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    }
+    
+    }
+    
+    .week {
+      font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.body};
+    }
+
+    }
   `
 
  S.package = styled.div`
- @media (min-width: 416px) {
+ @media (min-width: 450px) {
  display: flex;
  flex-wrap: wrap;
  align-items: center;
@@ -288,13 +432,13 @@ S.ButtonWrapper = styled.div`
  gap: 40px;
  }
 
- @media (max-width: 414px) {
+ @media (max-width: 430px) {
   display: flex;
  flex-wrap: wrap;
  align-items: center;
  margin: 0 auto;
  margin-top: 20px;
- margin-bottom: 100px;
+ margin-bottom: 20px;
  width: 90vw;
  height: auto;
  gap: 20px;
@@ -303,7 +447,7 @@ S.ButtonWrapper = styled.div`
 `;
 
 S.package2 = styled.div`
- @media (min-width: 416px) {
+ @media (min-width: 450px) {
  display: flex;
  flex-wrap: wrap;
  align-items: center;
@@ -313,7 +457,7 @@ S.package2 = styled.div`
  height: auto;
  gap: 40px;
  }
- @media (max-width: 414px) {
+ @media (max-width: 430px) {
   display: flex;
  flex-wrap: wrap;
  align-items: center;
@@ -329,13 +473,13 @@ S.package2 = styled.div`
  
 
 S.middle = styled.div`
- @media (min-width: 416px) {
+ @media (min-width: 450px) {
  width: 20vw;
  cursor: pointer;
  margin: 0 auto;
  }
 
- @media (max-width: 414px) {
+ @media (max-width: 430px) {
   width: 40vw;
  cursor: pointer;
  margin: 0 auto;
@@ -375,7 +519,7 @@ S.block = styled.div`
 `
 
 S.Image2 = styled.img`
-  @media (min-width: 414px) {
+  @media (min-width: 450px) {
  display: block;
  width: 240px;
  height: 180px;
@@ -383,7 +527,7 @@ S.Image2 = styled.img`
  cursor: pointer;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 430px) {
   display: block;
   width: 160px;
   height: 160px;

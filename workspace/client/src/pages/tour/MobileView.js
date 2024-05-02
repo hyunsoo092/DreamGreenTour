@@ -70,134 +70,123 @@ const MobileView = () => {
     nextArrow: <NextArrow />
   };  
 
-  
-  const settings2= {
-    infinite: false,
-    arrow: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    prevArrow: <PrevArrow /> ,
-    nextArrow: <NextArrow />
-  };  
     
     
     return  (
       <>
-      <S.div1>
-        <Outlet />
-        
-        <Slider {...settings1}>  
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/1.png`} alt="배경 이미지1" />
-        </S.ImageWrapper>
-
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/2.png`} alt="배경 이미지2" />
-        </S.ImageWrapper>
-
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/3.png`} alt="배경 이미지3" />
-        </S.ImageWrapper>
-
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/4.png`} alt="배경 이미지4" />
-        </S.ImageWrapper>
-
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/5.png`} alt="배경 이미지5" />
-        </S.ImageWrapper>
-
-        <S.ImageWrapper>
-          <img src={`${process.env.PUBLIC_URL}/tour/background/6.png`} alt="배경 이미지6" />
-        </S.ImageWrapper>
-       
-        </Slider>
-
-        
-        <S.travel>
-
-        <S.DropdownContainer1>
-        <button onClick={startHandler} ref={startRef}>
-         <FontAwesomeIcon icon={faLocationDot} />
-         {startContent}
-       </button> 
-    
-      <S.Menu1 isDropped={startIsOpen}>
-        <S.Ul1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() => handleStartClick('서울.경기')}>서울.경기</S.LinkWrapper1>
-          </S.Li1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() => handleStartClick('강원도')}>강원도</S.LinkWrapper1>
-          </S.Li1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() =>handleStartClick('충청도')}>충청도</S.LinkWrapper1>
-          </S.Li1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() => handleStartClick('경상도')}>경상도</S.LinkWrapper1>
-          </S.Li1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() => handleStartClick('전라도')}>전라도</S.LinkWrapper1>
-          </S.Li1>
-          <S.Li1>
-            <S.LinkWrapper1 onClick={() => handleStartClick('제주도')}>제주도</S.LinkWrapper1>
-          </S.Li1>
+        <S.div1>
+          <Outlet />
           
-        </S.Ul1>
-     </S.Menu1>
-     </S.DropdownContainer1>
+          <Slider {...settings1}>  
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/1.png`} alt="배경 이미지1" />
+          </S.ImageWrapper>
 
-    <S.DropdownContainer2>
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/2.png`} alt="배경 이미지2" />
+          </S.ImageWrapper>
 
-       <button onClick={endHandler} ref={endRef}>
-        <FontAwesomeIcon icon={faCompass} />  
-        {endContent}
-      </button> 
-    
-      <S.Menu2 isDropped={endIsOpen}>
-        <S.Ul2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleEndClick('서울.경기')}>서울.경기</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleEndClick('강원도')}>강원도</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() =>handleEndClick('충청도')}>충청도</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleEndClick('경상도')}>경상도</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleEndClick('전라도')}>전라도</S.LinkWrapper2>
-          </S.Li2>
-          <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleEndClick('제주도')}>제주도</S.LinkWrapper2>
-          </S.Li2>
-          
-        </S.Ul2>
-     </S.Menu2>
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/3.png`} alt="배경 이미지3" />
+          </S.ImageWrapper>
 
-    </S.DropdownContainer2>
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/4.png`} alt="배경 이미지4" />
+          </S.ImageWrapper>
 
-    <S.CalendarContainer>
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/5.png`} alt="배경 이미지5" />
+          </S.ImageWrapper>
 
-        <button onClick={handleCalendarButtonClick}>
-          <FontAwesomeIcon icon={faCalendarDays} />
-          {moment(selectedDate).format("YYYY-MM-DD")}
-        </button>
-         <S.CalendarWrapper isOpen={isCalendarOpen}>
-           {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
-         </S.CalendarWrapper>
-     </S.CalendarContainer>
+          <S.ImageWrapper>
+            <img src={`${process.env.PUBLIC_URL}/tour/background/6.png`} alt="배경 이미지6" />
+          </S.ImageWrapper>
+        
+          </Slider>
+    </S.div1>
 
-     <S.ButtonWrapper>
-        <button>검색</button>
-     </S.ButtonWrapper>
+    <S.travel>
 
-     </S.travel>
-  </S.div1>
+<S.DropdownContainer1>
+<button onClick={startHandler} ref={startRef}>
+<FontAwesomeIcon icon={faLocationDot} />
+{startContent}
+</button> 
+
+<S.Menu1 isDropped={startIsOpen}>
+<S.Ul1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() => handleStartClick('서울.경기')}>서울.경기</S.LinkWrapper1>
+  </S.Li1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() => handleStartClick('강원도')}>강원도</S.LinkWrapper1>
+  </S.Li1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() =>handleStartClick('충청도')}>충청도</S.LinkWrapper1>
+  </S.Li1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() => handleStartClick('경상도')}>경상도</S.LinkWrapper1>
+  </S.Li1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() => handleStartClick('전라도')}>전라도</S.LinkWrapper1>
+  </S.Li1>
+  <S.Li1>
+    <S.LinkWrapper1 onClick={() => handleStartClick('제주도')}>제주도</S.LinkWrapper1>
+  </S.Li1>
+  
+</S.Ul1>
+</S.Menu1>
+</S.DropdownContainer1>
+
+<S.DropdownContainer2>
+
+<button onClick={endHandler} ref={endRef}>
+<FontAwesomeIcon icon={faCompass} />  
+{endContent}
+</button> 
+
+<S.Menu2 isDropped={endIsOpen}>
+<S.Ul2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() => handleEndClick('서울.경기')}>서울.경기</S.LinkWrapper2>
+  </S.Li2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() => handleEndClick('강원도')}>강원도</S.LinkWrapper2>
+  </S.Li2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() =>handleEndClick('충청도')}>충청도</S.LinkWrapper2>
+  </S.Li2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() => handleEndClick('경상도')}>경상도</S.LinkWrapper2>
+  </S.Li2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() => handleEndClick('전라도')}>전라도</S.LinkWrapper2>
+  </S.Li2>
+  <S.Li2>
+    <S.LinkWrapper2 onClick={() => handleEndClick('제주도')}>제주도</S.LinkWrapper2>
+  </S.Li2>
+  
+</S.Ul2>
+</S.Menu2>
+
+</S.DropdownContainer2>
+
+<S.CalendarContainer>
+
+<button onClick={handleCalendarButtonClick}>
+  <FontAwesomeIcon icon={faCalendarDays} />
+  {moment(selectedDate).format("YYYY-MM-DD")}
+</button>
+<S.CalendarWrapper isOpen={isCalendarOpen}>
+  {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
+</S.CalendarWrapper>
+</S.CalendarContainer>
+
+<S.ButtonWrapper>
+<button>검색</button>
+</S.ButtonWrapper>
+
+</S.travel>
 
 
 
