@@ -32,7 +32,10 @@ const sizeCSS = {
   middle:css`
     font-size: 32px;
   `,
-  small : css`
+  small:css`
+  font-size:26px;
+  `,
+  x_small : css`
     font-size:18px;
   `
 }
