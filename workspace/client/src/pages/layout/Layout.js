@@ -26,12 +26,15 @@ const Layout = () => {
 
       <S.LogoWrapper>
         <S.Search>
+          <Link to={"/"}>
           <S.Logo>DreamGreenTour</S.Logo>
+          </Link>
           <S.Input type="text" placeholder="검색어를 입력해 주세요" />
-          <FontAwesomeIcon icon={faSearch} className="icon" />
+          <FontAwesomeIcon icon={faSearch} className="icon1" />
         </S.Search>
+        
         <Link to={"/mypage"}>
-          <FontAwesomeIcon icon={faUser} className="icon" />
+          <FontAwesomeIcon icon={faUser} className="icon2" />
         </Link>
       </S.LogoWrapper>
 
@@ -46,9 +49,12 @@ const Layout = () => {
         <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
 
+
+
       <S.Main>
         <Outlet />
       </S.Main>
+
     </S.Wrapper>
   );
 };

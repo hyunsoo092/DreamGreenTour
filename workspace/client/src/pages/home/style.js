@@ -6,6 +6,12 @@ const S = {};
 
 // 1번 
 S.Section = styled.div`
+  overflow-x: hidden ;
+  width: 100vw;
+  height: auto;
+`
+
+S.div = styled.div`
  overflow-x: hidden ;
   width: 100vw;
   height: auto;
@@ -28,6 +34,14 @@ S.Wrapper = styled.div`
   width:  20%;
   height: 90%;
   background-color: pink;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+      width: 80vw;
+      height: 40vh;
+      margin-bottom: 50px;
+      
+      
+  }
   
 `
 
@@ -114,49 +128,113 @@ S.ListWrapper = styled.div`
       padding: 10px;
       color: #F06C5E;
       width: 15%; 
+
+      @media screen and (min-width: 200px) and (max-width: 450px) {
+        margin-left: 33px;
+        margin-bottom:-10px;
+        border: 2px solid #F06C5E;
+        border-radius: 40px / 30px;
+        padding: 8px;
+        color: #F06C5E;
+        font-size : 10px;
+        width: 30%;
+        position: absolute;
+        bottom: 45%;
+        left: -2%;
+           }
       } 
 
+     
       .title2 {
       font-size: ${theme.FONT_SIZE.h3};
       font-weight: ${theme.FONT_WEIGHT.bold};
       font-family: ${theme.FONT_FAMILY.heading};
       margin-left: 200px;
+
+      @media screen and (min-width: 200px) and (max-width: 450px) {
+      
+      margin-bottom: -30px;
+      font-size: ${theme.FONT_SIZE.h6};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      position: absolute;
+      bottom: 49%;
+      left: -5%;
+     
+        } 
       } 
 ` 
   
-
   S.region = styled.div`
 
 .slick-list {
-  position: relative; /* slick-list에 상대 위치 설정 */
-}
+ position: relative;
+
+ @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: relative;
+    max-width: 100vw;
+    width: 90%;  
+    overflow: hidden;
+    height: auto;
+    }
+
+  
+ }
 
   .arrow2 {
   position: absolute; /* 절대 위치로 설정 */
-  left: 70%;
+  left: 72%;
   bottom: 100%;
   font-size: 25px;
   cursor: pointer;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  position: absolute; /* 절대 위치로 설정 */
+  left: 72%;
+  bottom: 49%;
+  font-size: 15px;
+  cursor: pointer;
+
+}
+
 }
 
   .arrow1 {
     position: absolute;
-    left: 73%;
+    left: 75%;
     bottom: 100%; 
     font-size: 25px;
     cursor: pointer;
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    left: 79%;
+    bottom: 49%; 
+    font-size: 15px;
+    cursor: pointer;
+
+    }
   }
 
-    .slick-slide {
+  .slick-slide {
   display: flex;
   justify-content: space-around;
   width: 80%;
   height: 50vh;
   margin-top: 60px;
 
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: 50vh;
+  margin-top: 70px;
+
+  }
+ 
    }
-  `
-  
+`
+    
   S.Circle = styled.div`
   
    position: relative;
@@ -164,6 +242,13 @@ S.ListWrapper = styled.div`
    height: 70%;
    border-radius:50%;
    overflow: hidden;
+
+   @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: relative;
+    width: 50%;
+    height: 30%;
+   }
+
    
 
   `
@@ -173,6 +258,7 @@ S.ListWrapper = styled.div`
    background-repeat: no-repeat;
    background-size: cover; 
    cursor: pointer;
+
    
   `
 
@@ -201,6 +287,21 @@ S.ListWrapper = styled.div`
     height: auto;
     margin-bottom: 50px;
 
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    top: 80%;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom: 50px;
+
+
+    }
+
     .num1 {
       margin-bottom: 50px;
       font-size : 12px;
@@ -222,9 +323,18 @@ S.ListWrapper = styled.div`
     width: 40vw;
     height: 70px ;
     margin: 0 auto;
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: absolute;
+      top: 96%;
+      left: 5%;
+    width: 90vw;
+    height: 70px ;
+    margin: 0 auto;
+
+    }
     
-    
-    
+  
     ul {
       display: flex;
       justify-content: space-between;
@@ -255,14 +365,31 @@ S.package = styled.div`
   width: 70vw;
   height: auto;
   gap: 40px;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  width: 90vw;
+  height: auto;
+  gap: 40px;
+  }
 `;
 
 S.middle = styled.div`
   width: 15vw;
   cursor: pointer;
-  
-    
   margin: 0 auto;
+  
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    width: 35vw;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+    
   .big  {   
      position: relative;
      left: 20px;
@@ -270,6 +397,16 @@ S.middle = styled.div`
      font-weight: ${theme.FONT_WEIGHT.bold};
      font-family: ${theme.FONT_FAMILY.heading};
      padding: 7px;
+
+     @media screen and (min-width: 200px) and (max-width: 450px) {
+     position: relative;
+     left: 10px;
+     font-size: ${theme.FONT_SIZE.h7};
+     font-weight: ${theme.FONT_WEIGHT.bold};
+     font-family: ${theme.FONT_FAMILY.heading};
+     padding: 7px;
+
+     }
     }
   
    .small {
@@ -282,6 +419,19 @@ S.middle = styled.div`
     svg path {
     fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
       }
+      
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+        position: relative;
+        left: 10px;
+        font-size: ${theme.FONT_SIZE.h9};
+        font-weight: ${theme.FONT_WEIGHT.bold};
+        font-family: ${theme.FONT_FAMILY.heading};
+        padding: 7px;
+        svg path {
+          fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
+           }
+      }
+    
   }
    
    .price2 {
@@ -292,6 +442,16 @@ S.middle = styled.div`
      font-family: ${theme.FONT_FAMILY.heading};
      padding: 7px;
      color: red;
+
+     @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: relative;
+     left: 10px;
+     font-size: ${theme.FONT_SIZE.h6};
+     font-weight: ${theme.FONT_WEIGHT.bold};
+     font-family: ${theme.FONT_FAMILY.heading};
+     padding: 7px;
+     color: red;
+     }
    }
 
 `
@@ -306,6 +466,14 @@ S.Image2 = styled.img`
   height: 180px;
   border-radius: 8%;
   cursor: pointer;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 8%;
+  cursor: pointer;
+  }
   
 `;
 
@@ -368,6 +536,10 @@ S.keyword = styled.div`
 `
 
 S.plays = styled.div`
+
+@media screen and (min-width: 200px) and (max-width: 450px) { 
+    display: none;
+}
 
 .slick-list {
   position: relative; /* slick-list에 상대 위치 설정 */
@@ -734,6 +906,23 @@ S.end = styled.div`
   font-weight: ${theme.FONT_WEIGHT.bold};
   font-family: ${theme.FONT_FAMILY.heading};
   margin-bottom: 30px;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    font-size: ${theme.FONT_SIZE.h4};
+  font-weight: ${theme.FONT_WEIGHT.bold};
+  font-family: ${theme.FONT_FAMILY.heading};
+  margin-bottom: 20px;
+   }
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 50px;
   }
 `
 S.icons = styled.div`
@@ -742,6 +931,10 @@ S.icons = styled.div`
   gap: 10px;
   border: 1px solid #e7e7e7;
   background-color: #f5f5f5;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+
+  }
 
   p {
     line-height: 1.5; /* 예시로 줄 간격을 1.5배로 설정 */
@@ -771,6 +964,17 @@ position: absolute;
 top: 100%;
 left: -20%;
 display: ${(props) => (props.isOpen ? "block" : "none")};
+
+@media screen and (min-width: 200px) and (max-width: 450px) {
+  z-index: 11;
+  position: absolute;
+  transform: scale(0.5);
+  top: -99%;
+  right: -50%;
+
+display: ${(props) => (props.isOpen ? "block" : "none")};
+}
+
 `;
 
 
