@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useMediaQuery } from 'react-responsive';
 import MobileView from "./MobileView";
@@ -10,7 +11,5 @@ const Home = () => {
     <>
       {isMobile ? <MobileView /> : <DesktopView />}
     </>
-  );
-};
 
 export default Home;

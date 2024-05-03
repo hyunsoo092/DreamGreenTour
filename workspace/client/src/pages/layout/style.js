@@ -16,6 +16,7 @@ S.Wrapper = styled.div`
 
 S.Logo = styled.h1`
   font-size: ${({ theme }) => theme.FONT_SIZE["h2"]};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
   color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
 `;
 
@@ -120,9 +121,8 @@ S.Menu = styled.div`
 
 `;
 
-S.Home = styled.div`
-  
-`
-
+S.Main = styled.main`
+  flex: 1;
+`;
 
 export default S;
