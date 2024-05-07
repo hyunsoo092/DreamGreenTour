@@ -1,14 +1,16 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
+import MobileView from "./MobileView";
+import DesktopView from "./DesktopView";
 
 const Tour = () => {
-  return  (
-    <div>
-      여행 페이지
-      <Outlet />
-    </div>
-   );
+  const isMobile = useMediaQuery({ maxWidth: 430 });
+
+  return (
+    <>
+      {isMobile ? <MobileView /> : <DesktopView />}
+    </>
+  );
 };
 
 export default Tour;
-

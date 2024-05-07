@@ -16,14 +16,14 @@ const S = {};
       height: 80px;
       margin-top: 1vh;
       align-items: center;
-      box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1);
       border-radius: 15px;
     `
 
     S.ImageWrapper = styled.div`
     width: 80vw;
         ${flexCenterRow}
-    box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1);
     height  : 320px;
     margin-top: 10px;
     border-radius: 15px;
@@ -44,10 +44,10 @@ const S = {};
     S.ContentsWrapper=styled.div`
       width: 80vw;
         /* ${flexCenterColumn} */
-      height: 100vh;
+      height: 100%;
       padding:20px;
       margin-top:20px;
-      box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1);
       border-radius: 15px;
     `
     S.DetailTitleDiv=styled.div`
@@ -98,15 +98,64 @@ display: flex;
 margin-top: 10px;
 `
 S.DetailContentsLeft = styled.div`
-background-color: aqua;
+/* background-color: beige; */
 width: 50%;
-height: 2000px;
+max-height: 1500px;
+${flexCenterColumn}
+border-right: 1px solid rgba(0,0,0,0.2);
 `
-S.DetailContentsRight = styled.div`
-background-color: beige;
-width: 50%;
+S.PlanWrapper = styled.div`
+/* background-color: aqua; */
+width: 90%;
 height: 100%;
-
+flex-direction: column;
+align-items: center;
+display: flex;
+margin:20px 0px 20px 0px;
+`
+S.Plan = styled.div`
+/* background-color: black; */
+width: 90%;
+height: 12vh;
+margin:20px 0px 20px 0px;
+border-radius: 5px;
+box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.1);
 `
 
+
+S.DetailContentsRight = styled.div`
+width: 50%;
+max-height: 100%;
+/* ${flexCenterColumn} */
+`
+S.DetailContentsContainer = styled.div`
+width: 100%;
+max-height: 100%;
+border-radius: 5px;
+/* ${flexCenterColumn} */
+`
+S.PlaceDetailImgDiv = styled.div`
+background-color: aqua;
+width: 90%;
+height: 30vh;
+flex-direction: column;
+align-items: center;
+display: flex;
+margin:40px;
+`
+S.PDImage=styled.img`
+width: 100%;
+height: 100%;
+border-radius: 5px;
+`
+S.PDContentsDiv = styled.div`
+width: 90%;
+height: 35vh;
+flex-direction: column;
+align-items: center;
+display: flex;
+margin:5px 40px 10px 40px;
+background-color: #F3F3F3;
+border-radius: 5px;
+`
 export default S;

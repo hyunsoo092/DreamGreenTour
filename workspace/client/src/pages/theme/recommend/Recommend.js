@@ -47,10 +47,24 @@ const Recommend = ({themeTrip,getTheme}) => {
         </S.Search>
         <S.DetailContentsWrapper>
             <S.DetailContentsLeft>
-                
+              <S.PlanWrapper>
+                <S.Plan>dsdf</S.Plan>
+                <S.Plan></S.Plan>
+                <S.Plan></S.Plan>
+                <S.Plan></S.Plan>
+                <S.Plan></S.Plan>
+                <S.Plan></S.Plan>
+    
+              </S.PlanWrapper>
             </S.DetailContentsLeft>
             <S.DetailContentsRight>
-
+              <S.DetailContentsContainer>
+                <S.PlaceDetailImgDiv>
+                  <S.PDImage></S.PDImage>
+                </S.PlaceDetailImgDiv>
+                  <S.PDContentsDiv></S.PDContentsDiv>
+                  <S.PDContentsDiv></S.PDContentsDiv>
+              </S.DetailContentsContainer>
             </S.DetailContentsRight>
 
         </S.DetailContentsWrapper>

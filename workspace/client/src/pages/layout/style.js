@@ -8,12 +8,15 @@ import {
 
 const S = {};
 
+
 S.Wrapper = styled.div`
   ${flexCenterColumn}
+  
 `;
 
 S.Logo = styled.h1`
   font-size: ${({ theme }) => theme.FONT_SIZE["h2"]};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
   color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
 `;
 
@@ -23,18 +26,45 @@ S.LogoWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 48px;
-  .icon {
+
+  .icon1 {
     color: #bec4c9;
     font-size: 24px;
     padding: 4px;
     margin-left: -45px;
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    display: none;
   }
+}
+
+   .icon2 {
+    color: #bec4c9;
+    font-size: 24px;
+    padding: 4px;
+    margin-left: -45px;
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      font-size: 25px;
+      margin-left: 20px;
+
+    }
+   }
+   
+  
+
+  input {
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    display: none;
+  }
+  }
+ 
 `;
 
 S.LoginWrapper = styled.div`
   margin-left: auto;
   height: 48px;
-
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    display: none;
+  }
   .icon {
     height: 40px;
   }
@@ -44,6 +74,9 @@ S.Search = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 200px) and (max-width: 450px)  { 
+    margin-left: -20px;
+  }
 `;
 
 S.List = styled.div`
@@ -74,6 +107,9 @@ S.MenuWrapper = styled.div`
   margin-top: 20px;
   font-size: ${({ theme }) => theme.FONT_SIZE["h5"]};
   ${flexSpaceAroundCenter}
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    display: none;
+  }
 `;
 
 S.Menu = styled.div`
@@ -82,11 +118,11 @@ S.Menu = styled.div`
   ${flexEvenlyCenter}
   margin-left: -30px;
   border-right: 1px solid lightgray;
+
 `;
 
-S.Home = styled.div`
-  
-`
-
+S.Main = styled.main`
+  flex: 1;
+`;
 
 export default S;
