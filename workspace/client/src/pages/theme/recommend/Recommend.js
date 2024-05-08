@@ -40,16 +40,16 @@ useEffect(()=>{
     <S.ImageWrapper className="ImageWrapper">
       
       <S.ImageDiv>
-      <S.Images src="/img/picture/slide_pohang.jpg"></S.Images>
+      <S.Images src="/img/picture/sheep.jpeg"></S.Images>
       </S.ImageDiv>
       <S.ImageDiv>
-      <S.Images src="/img/picture/slide_daegu.jpg"></S.Images>
+      <S.Images src="/img/picture/nongol.jpeg"></S.Images>
       </S.ImageDiv>
       <S.ImageDiv>
-      <S.Images src="/img/picture/slide_yeosu.jpg"></S.Images>
+      <S.Images src="/img/picture/songjunghouse.webp"></S.Images>
       </S.ImageDiv>
       <S.ImageDiv>
-      <S.Images src="/img/picture/slide_yeosu.jpg"></S.Images>
+      <S.Images src="/img/picture/songjung.jpeg"></S.Images>
       </S.ImageDiv>
     </S.ImageWrapper>
     <S.ContentsWrapper>
