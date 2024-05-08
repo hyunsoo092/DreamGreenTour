@@ -931,7 +931,7 @@ S.icons = styled.div`
   gap: 10px;
   border: 1px solid #e7e7e7;
   background-color: #f5f5f5;
-
+  
   @media screen and (min-width: 200px) and (max-width: 450px) {
 
   }
