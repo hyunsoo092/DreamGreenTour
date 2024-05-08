@@ -280,9 +280,11 @@ S.PopularityContentsWrapper = styled.div`
 `
 
     S.PPContentDiv = styled.div`
+     transition: transform 0.2s ease-in-out;
           &:hover {
-    transform: scale(1.2);
-  }
+        transform: scale( 1.1 ,1.1);
+                
+      }
       /* background-color:#37a5517d; */
       background-color: white;
       border: 3px solid #37a5517d ;
@@ -383,10 +385,6 @@ S.PopularityContentsWrapper = styled.div`
     margin-left: 100px;
     width: 50%;
 font-size: 25px;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-    /* padding: 5px; */
       & svg.heartIcon path{
        color : #37A551;
      }

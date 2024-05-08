@@ -114,7 +114,7 @@ useEffect(()=>{
             </ul>
           </S.PopularityBanner>
           <S.PopularityContentsWrapper className="PopularityContentsWrapper">
-          {/* <NavLink to={`/recommend/${id}`}> */}
+          <NavLink to={`/recommend/${1}`}>
               <S.PPContentDiv className="PPContentDiv">
                   <S.PPImageDiv className="PPImageDiv">
                     <S.PPImage src="/img/picture/slide_daegu.jpg" className="PPImage"></S.PPImage>
@@ -145,7 +145,7 @@ useEffect(()=>{
                     </S.Stars>
                   </S.PPSpanBox>
               </S.PPContentDiv>
-            {/* </NavLink> */}
+            </NavLink>
 
 
               <S.PPContentDiv className="PPContentDiv">

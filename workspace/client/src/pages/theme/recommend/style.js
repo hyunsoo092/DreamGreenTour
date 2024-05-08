@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenterColumn, flexCenterRow } from "../../../global/common";
+import { flexCenterColumn, flexCenterRow, flexEvenlyCenter } from "../../../global/common";
 import reset from "styled-reset";
 import GlobalStyle from "../../../global/global";
 import theme from "../../../global/theme";
@@ -115,14 +115,72 @@ margin:20px 0px 20px 0px;
 `
 S.Plan = styled.div`
 /* background-color: black; */
+cursor: pointer;
 width: 90%;
 height: 12vh;
 margin:20px 0px 20px 0px;
 border-radius: 5px;
 box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.1);
+${flexEvenlyCenter}
+  transition: transform 0.2s ease-in-out;
+          &:hover {
+        transform: scale( 1.1 ,1.1);
+                
+      }
 `
-
-
+S.PlanImageWrapper=styled.div`
+width: 35%;
+height: 90%;
+background-color: aqua;
+border-radius: 5px;
+margin: auto;
+`
+S.PlanImage=styled.img`
+width: 100%;
+height: 100%;
+`
+S.PlanContentWrapper = styled.div`
+width: 60%;
+height: 90%;
+margin: auto;
+padding: 10px;
+flex-direction: column;
+display: flex;
+          .heading2{
+            font-weight: ${theme.FONT_WEIGHT.bold};
+            font-size: ${theme.FONT_SIZE.h6};
+            color: ${theme.PALLETE.primary["mainGreen100"]};
+            font-family: ${theme.FONT_FAMILY.heading};
+             padding:5px;
+            }
+      
+           .small{
+                  font-size: ${theme.FONT_SIZE.h7};
+               font-weight: 500;
+                font-family: ${theme.FONT_FAMILY.heading};
+                line-height: initial;
+                color: gray;
+                padding: 5px;
+                }
+          
+`
+S.Region1 = styled.div`
+width: 100%;
+height: 20%;
+display: flex;
+      .heading{
+            font-size: ${theme.FONT_SIZE.h8};
+               font-weight: 600;
+                font-family: ${theme.FONT_FAMILY.heading};
+             padding:5px;
+           width: 50%;
+           }
+      .faXmark{
+            font-size: 23px;
+            margin-left: 300px;
+            width: 50%;
+          }
+`
 S.DetailContentsRight = styled.div`
 width: 50%;
 max-height: 100%;
@@ -134,13 +192,24 @@ max-height: 100%;
 border-radius: 5px;
 /* ${flexCenterColumn} */
 `
+S.PlaceTitle=styled.div`
+${flexCenterColumn}
+width: 100%;
+height: 20%;
+ .placeTitle{
+  font-size: ${theme.FONT_SIZE.h4};
+               font-weight: 600;
+                font-family: ${theme.FONT_FAMILY.heading};
+                color: ${theme.PALLETE.primary["mainGreen100"]};
+ }
+`
 S.PlaceDetailImgDiv = styled.div`
-background-color: aqua;
 width: 90%;
 height: 30vh;
 flex-direction: column;
 align-items: center;
 display: flex;
+border-radius: 5px;
 margin:40px;
 `
 S.PDImage=styled.img`
@@ -154,8 +223,13 @@ height: 35vh;
 flex-direction: column;
 align-items: center;
 display: flex;
+padding:10px;
 margin:5px 40px 10px 40px;
 background-color: #F3F3F3;
 border-radius: 5px;
+line-height: 210%;
+font-weight: ${theme.FONT_WEIGHT.regular};
+font-size: ${theme.FONT_SIZE.h6};
+            font-family: ${theme.FONT_FAMILY.heading};
 `
 export default S;

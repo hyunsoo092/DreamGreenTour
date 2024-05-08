@@ -1,13 +1,25 @@
 import React from 'react';
+import S from './style';
+import { Link } from 'react-router-dom';
 
-const Recommend = () => {
+
+const Recommend = ({themeTrip,getTheme}) => {
+  const {title} = themeTrip;
+  const {content} = themeTrip;
+  const {id}=themeTrip;
+
   return (
-    <div>
-      <p>레코멘드 페이지
+  <>
+  </>
+  //   <S.PlanWrapper>
+  //   <S.Plan>dsdf</S.Plan>
+  //   <S.Plan></S.Plan>
+  //   <S.Plan></S.Plan>
+  //   <S.Plan></S.Plan>
+  //   <S.Plan></S.Plan>
+  //   <S.Plan></S.Plan>
 
-      숙소 및 식당 추천페이지
-      </p>
-    </div>
+  // </S.PlanWrapper>
   );
 };
 
