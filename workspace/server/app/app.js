@@ -9,12 +9,16 @@ const port = 8000;
 
 app.use(bodyParser.json());
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, // 인증 정보를 포함하도록 허용
+};
+
+app.use(cors(corsOptions));
+app.use("/", router);
 
 app.listen(port, () => {
   console.log(`server is on ${port}`);
 });
 
 connect();
-
-app.use(router);

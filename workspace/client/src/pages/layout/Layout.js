@@ -2,15 +2,19 @@ import React from "react";
 import S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setPreviousUrl } from "../../modules/pageControl";
-const Layout = () => {
+const Layout = ({ isUse = false }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const path = location.pathname + location.search;
   console.log(path);
   dispatch(setPreviousUrl(path));
+  const navigate = useNavigate();
+  const handleHome = () => {
+    navigate("/");
+  };
   return (
     <S.Wrapper>
       <S.LoginWrapper>
@@ -26,15 +30,14 @@ const Layout = () => {
 
       <S.LogoWrapper>
         <S.Search>
-          <Link to={"/"}>
-          <S.Logo>DreamGreenTour</S.Logo>
-          </Link>
-          <S.Input type="text" placeholder="검색어를 입력해 주세요" />
-          <FontAwesomeIcon icon={faSearch} className="icon1" />
+          <S.Logo onClick={handleHome}>DreamGreenTour</S.Logo>
+          <S.SearchInput>
+            <S.Input type="text" placeholder="검색어를 입력해 주세요" />
+            <FontAwesomeIcon icon={faSearch} className="icon" />
+          </S.SearchInput>
         </S.Search>
-        
         <Link to={"/mypage"}>
-          <FontAwesomeIcon icon={faUser} className="icon2" />
+          <FontAwesomeIcon icon={faUser} className="userIcon" />
         </Link>
       </S.LogoWrapper>
 
@@ -44,17 +47,12 @@ const Layout = () => {
           전체메뉴
         </S.Menu>
         <Link to={"/tour"}>여행</Link>
-        <Link to={"/review"}>후기</Link>
+        <Link to={"/review/Seoul"}>후기</Link>
         <Link to={"/theme"}>테마</Link>
         <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
 
-
-
-      <S.Main>
-        <Outlet />
-      </S.Main>
-
+      {!isUse && <Outlet />}
     </S.Wrapper>
   );
 };

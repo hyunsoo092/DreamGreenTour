@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const connectionUrl = `mongodb+srv://fronttwo24:1234@cluster0.n09vftn.mongodb.net/`;
 
 const connect = () => {
-  if (process.env_NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production") {
     mongoose.set("debug", true);
   }
   mongoose

@@ -17,4 +17,15 @@ const register = async (req, res) => {
   res.send("회원가입이 완료되었습니다.");
 };
 
-export { register };
+const login = async (req, res) => {
+  const userData = {
+    isLogin: true,
+  };
+  await User.updateOne(
+    { email: req.body.email, password: req.body.password },
+    userData
+  );
+  res.send("로그인이 완료되었습니다.");
+};
+
+export { register, login };
