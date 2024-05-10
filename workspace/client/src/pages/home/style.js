@@ -36,7 +36,7 @@ S.Wrapper = styled.div`
   @media screen and (min-width: 200px) and (max-width: 450px) {
     width: 80vw;
     height: 40vh;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -109,6 +109,25 @@ S.ButtonWrapper = styled.div`
 // 2번
 S.Title1 = styled.div`
   .title1 {
+    margin-left: 25px;
+
+    padding: 10px;
+    color: #f06c5e;
+    font-size: 10px;
+    width: 30%;
+  }
+
+  .title2 {
+    margin-bottom: -30px;
+    font-size: ${theme.FONT_SIZE.h7};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    position: absolute;
+    bottom: 50%;
+    margin-left: 150px;
+  }
+
+  .title3 {
     margin-top: 100px;
     margin-bottom: 20px;
     margin-left: 200px;
@@ -118,37 +137,13 @@ S.Title1 = styled.div`
     padding: 10px;
     color: #f06c5e;
     width: 15%;
-
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-      margin-left: 33px;
-      margin-bottom: -10px;
-      border: 2px solid #f06c5e;
-      border-radius: 40px / 30px;
-      padding: 8px;
-      color: #f06c5e;
-      font-size: 10px;
-      width: 30%;
-      position: absolute;
-      bottom: 45%;
-      left: -2%;
-    }
   }
 
-  .title2 {
+  .title4 {
     font-size: ${theme.FONT_SIZE.h3};
     font-weight: ${theme.FONT_WEIGHT.bold};
     font-family: ${theme.FONT_FAMILY.heading};
     margin-left: 200px;
-
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-      margin-bottom: -30px;
-      font-size: ${theme.FONT_SIZE.h6};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-      position: absolute;
-      bottom: 49%;
-      left: -5%;
-    }
   }
 `;
 
@@ -157,27 +152,28 @@ S.region = styled.div`
     position: relative;
 
     @media screen and (min-width: 200px) and (max-width: 450px) {
-      position: relative;
+      position: absolute;
       max-width: 100vw;
       width: 90%;
       overflow: hidden;
       height: auto;
+      top: 100%;
     }
   }
 
   .arrow2 {
-    position: absolute; /* 절대 위치로 설정 */
+    position: absolute;
     left: 72%;
     bottom: 100%;
     font-size: 25px;
     cursor: pointer;
 
     @media screen and (min-width: 200px) and (max-width: 450px) {
-      position: absolute; /* 절대 위치로 설정 */
-      left: 72%;
-      bottom: 49%;
+      margin-top: -20px;
+      position: relative;
       font-size: 15px;
       cursor: pointer;
+      z-index: 5;
     }
   }
 
@@ -191,7 +187,7 @@ S.region = styled.div`
     @media screen and (min-width: 200px) and (max-width: 450px) {
       position: absolute;
       left: 79%;
-      bottom: 49%;
+      bottom: 5%;
       font-size: 15px;
       cursor: pointer;
     }
@@ -209,7 +205,7 @@ S.region = styled.div`
       justify-content: space-around;
       width: 80%;
       height: 50vh;
-      margin-top: 70px;
+      margin-bottom: 100px;
     }
   }
 `;
@@ -222,6 +218,7 @@ S.Circle = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
+    bottom: 10%;
     position: relative;
     width: 50%;
     height: 30%;
@@ -248,6 +245,21 @@ S.Text = styled.div`
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
   cursor: pointer;
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: ${theme.FONT_SIZE.h5};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    cursor: pointer;
+  }
 `;
 
 // 3번
@@ -260,22 +272,9 @@ S.top = styled.div`
   height: auto;
   margin-bottom: 50px;
 
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-    position: absolute;
-    top: 80%;
-    left: 17%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-items: center;
-    width: 70%;
-    height: auto;
-    margin-bottom: 50px;
-  }
-
   .num1 {
     margin-bottom: 50px;
-    font-size: 12px;
+    font-size: 10px;
     border: 2px solid #f06c5e;
     border-radius: 50px / 40px;
     padding: 10px;
@@ -288,6 +287,35 @@ S.top = styled.div`
     font-weight: ${theme.FONT_WEIGHT.bold};
     font-family: ${theme.FONT_FAMILY.heading};
   }
+
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    top: 83%;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom: 50px;
+
+    .num1 {
+      margin-bottom: 50px;
+      font-size: 10px;
+      border: 2px solid #f06c5e;
+      border-radius: 50px / 40px;
+      padding: 10px;
+      color: #f06c5e;
+      margin-bottom: 20px;
+    }
+
+    .num2 {
+      font-size: ${theme.FONT_SIZE.h5};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+    }
+  }
 `;
 
 S.country = styled.div`
@@ -297,7 +325,7 @@ S.country = styled.div`
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
     position: absolute;
-    top: 96%;
+    top: 99%;
     left: 5%;
     width: 90vw;
     height: 70px;
@@ -338,11 +366,12 @@ S.package = styled.div`
     flex-wrap: wrap;
     align-items: center;
     margin: 0 auto;
-    margin-top: -60px;
+    margin-top: 350px;
     margin-bottom: 50px;
-    width: 90vw;
+    width: 85vw;
     height: auto;
-    gap: 40px;
+    gap: 30px;
+    margin-left: 13px;
   }
 `;
 
@@ -433,8 +462,8 @@ S.Image2 = styled.img`
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
     display: block;
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 8%;
     cursor: pointer;
   }
@@ -905,7 +934,7 @@ S.CalendarWrapper = styled.div`
   @media screen and (min-width: 200px) and (max-width: 450px) {
     z-index: 11;
     position: absolute;
-    transform: scale(0.5);
+    transform: scale(0.7);
     top: -99%;
     right: -50%;
 
