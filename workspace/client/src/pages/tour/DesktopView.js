@@ -189,7 +189,7 @@ const DesktopView = () => {
 
     <S.week>
         <p className="best">
-        <FontAwesomeIcon icon={faCrown} />
+        <FontAwesomeIcon icon={faCrown}/>
           주간베스트 TOP4
           </p>
         <p className="week">지난 한 주간 인기 많았던 상품!</p>

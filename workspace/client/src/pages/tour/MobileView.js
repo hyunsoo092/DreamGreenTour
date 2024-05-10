@@ -200,7 +200,8 @@ const MobileView = () => {
     </S.week>
 
 
-    <S.package>
+      <S.package>
+        
          <S.middle>
            <S.block>
              <S.Image2 src={`${process.env.PUBLIC_URL}/tour/best/1.png`} alt="Description"/>
@@ -209,7 +210,7 @@ const MobileView = () => {
               TOP1
               <FontAwesomeIcon icon={faMedal} />
               </p>
-            <p className='big'>[에어카텔/에어텔]제주3/4일 #신화월드 <br/>
+            <p className='big'>[에어카텔/에어텔]제주3/4일 #신화월드
             #신화관 #래딩관 #메리엇트관 </p>
             <p className='middle'>239,000원~</p>
          </S.middle>
@@ -222,7 +223,7 @@ const MobileView = () => {
               TOP2
               <FontAwesomeIcon icon={faMedal} />
               </p>
-            <p className='big'>[스테디셀러]제주 #우도단독버스투어 #<br/>
+            <p className='big'>[스테디셀러]제주 #우도단독버스투어 #
             제주핵심명소 #식사ALL포함 #섬여행 </p>
             <p className='middle'>299,000원~</p>
          </S.middle>
@@ -247,7 +248,7 @@ const MobileView = () => {
               TOP4
               <FontAwesomeIcon icon={faMedal} />
               </p>
-            <p className='big'>[다드림]제주 3일 #BEST추천여행 #제<br/>
+            <p className='big'>[다드림]제주 3일 #BEST추천여행 #제
            주현지특식 #노쇼핑 #노팁</p>
             <p className='middle'>529,000원~</p>
          </S.middle>
@@ -262,9 +263,9 @@ const MobileView = () => {
           제주 패키지 여행
           </p>
         <p className="week">숙소, 식사, 일정 포함! 편하고 알찬 여행!</p>
-    </S.week>
+     </S.week>
 
-    <S.package2>
+      <S.package2>
          <S.middle>
            <S.block>
              <S.Image2 src={`${process.env.PUBLIC_URL}/tour/package/1.png`} alt="Description"/>
@@ -273,8 +274,7 @@ const MobileView = () => {
               패키지
               
               </p>
-            <p className='big'>[2024 설연휴]제주 3/4일 #황금연휴 좌<br/>
-            석확보</p>
+            <p className='big'>[2024 설연휴]제주 3/4일 #황금연휴 좌석확보</p>
             <p className='middle'>549,000원~</p>
          </S.middle>
 
@@ -286,7 +286,7 @@ const MobileView = () => {
               패키지
              
               </p>
-            <p className='big'>[다드림]제주 3일 #BEST추천여행 #제<br/>
+            <p className='big'>[다드림]제주 3일 #BEST추천여행 #제
             주현지특식 #노쇼핑,노팁 </p>
             <p className='middle'>529,000원~</p>
          </S.middle>
@@ -299,7 +299,7 @@ const MobileView = () => {
               패키지
               
               </p>
-            <p className='big'>[스테디셀러]제주 3일 #우도관광 #제주<br/>
+            <p className='big'>[스테디셀러]제주 3일 #우도관광 #제주
              핵심명소 #현지특식</p>
             <p className='middle'>299,000원~</p>
          </S.middle>
@@ -312,7 +312,7 @@ const MobileView = () => {
               패키지
            
               </p>
-            <p className='big'>[핫플레이스]제주 3일 #산양큰엉곶 #가<br/>
+            <p className='big'>[핫플레이스]제주 3일 #산양큰엉곶 #가
             파도 #사려니 숲길</p>
             <p className='middle'>309,000원~</p>
          </S.middle>
@@ -325,7 +325,7 @@ const MobileView = () => {
               패키지
               
               </p>
-            <p className='big'>[제주완전정복]제주 3일 #차귀도 섬탐방<br/>
+            <p className='big'>[제주완전정복]제주 3일 #차귀도 섬탐방
             #하늘연못 인생샷</p>
             <p className='middle'>489,000원~</p>
          </S.middle>
@@ -338,7 +338,7 @@ const MobileView = () => {
               패키지
              
               </p>
-            <p className='big'>[KE연합상품]제주 3일 #노팁&노옵션 #<br/>
+            <p className='big'>[KE연합상품]제주 3일 #노팁&노옵션 #
              우도+마라도 #삼도투어</p>
             <p className='middle'>373,000원~</p>
          </S.middle>
@@ -351,7 +351,7 @@ const MobileView = () => {
               패키지
            
               </p>
-            <p className='big'>[제주자연힐링]제주 3일 #영주10경 #미<br/>
+            <p className='big'>[제주자연힐링]제주 3일 #영주10경 #미
             각&시각여행#특식제공</p>
             <p className='middle'>569,000원~</p>
          </S.middle>
@@ -364,7 +364,7 @@ const MobileView = () => {
               패키지
               
               </p>
-            <p className='big'>[단독여행]제주3일 #우리끼리 #힐링포<br/>
+            <p className='big'>[단독여행]제주3일 #우리끼리 #힐링포
             인트 #특급호텔 #고급택시투어 </p>
             <p className='middle'>619,000원~</p>
          </S.middle>

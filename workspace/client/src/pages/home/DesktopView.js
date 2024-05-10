@@ -1241,8 +1241,8 @@ const checkScreen = () => {
         </S.ImageWrapper>
         
         <S.Title1>
-            <p className='title1'>DREAMGREENTOUR RECOMMEND</p>
-            <p className='title2'>어디로 여행을 떠나시나요?</p>
+            <p className='title3'>DREAMGREENTOUR RECOMMEND</p>
+            <p className='title4'>어디로 여행을 떠나시나요?</p>
         </S.Title1> 
 
       
