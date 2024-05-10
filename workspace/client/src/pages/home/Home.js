@@ -10,7 +10,6 @@ const Home = () => {
     <>
       {isMobile ? <MobileView /> : <DesktopView />}
     </>
-  );
-};
-
+  )
+}
 export default Home;

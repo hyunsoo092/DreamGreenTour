@@ -24,6 +24,7 @@ import HBooking from "../pages/hotel/booking/HBooking";
 import HTerms from "../pages/hotel/terms/HTerms";
 import HPayment from "../pages/hotel/payment/HPayment";
 import Recommend from "../pages/theme/recommend/Recommend";
+import Join from "../pages/join/Join";
 
 const router = createBrowserRouter([
   {
@@ -33,14 +34,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
 
       {
@@ -53,21 +46,32 @@ const router = createBrowserRouter([
       },
     ],
   },
-    {
-      path: "/mypage",
-      element: <Mypage />
-    },
-    {
-      path: "/mypage/tourSchedule",
-      element: <TourSchedule />,
-    },
-    {
-      path: "/mypage/infoUpdate", 
-      element: <InfoUpdate />,
-    },
-     
-      
-    
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/join",
+    element: <Join />,
+  },
+  {
+    path: "/mypage",
+    element: <Mypage />,
+    children: [
+      {
+        path: "/mypage/tourSchedule",
+        element: <TourSchedule />,
+      },
+      {
+        path: "/mypage/infoUpdate",
+        element: <InfoUpdate />,
+      },
+    ],
+  },
   {
     path: "/review",
     element: <Review />,
@@ -133,12 +137,10 @@ const router = createBrowserRouter([
   {
     path: "/theme",
     element: <Theme />,
-    children: [
-      {
-        path: "/theme/recommend",
-        element: <Recommend />,
-      },
-    ],
+   },
+   {path: "/recommend/:id",
+    element: <Recommend />,
+    
   },
 ]);
 

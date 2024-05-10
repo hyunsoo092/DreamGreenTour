@@ -6,7 +6,7 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons'; // 속�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faStar as full, faChevronLeft , faChevronRight ,faPlus , faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faStar as empty } from '@fortawesome/free-regular-svg-icons'
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -54,6 +54,7 @@ const stopPropagation = (e) => {
 const notexit = useCallback((e) => {
   stopPropagation(e);
 }, []);
+
 
 // 달력
 const [selectedDate, setSelectedDate] = useState(new Date());
@@ -247,13 +248,14 @@ const PrevArrow = ({ onClick }) => {
 };
 
 const settings = {
-  infinite: false,
+  
+  infinite: true,
   arrow: true,
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 2,
-  prevArrow: <PrevArrow />,
-  nextArrow: <NextArrow />
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />
 };  
 
 // 3-1 아이콘 하트 누르기 
@@ -279,7 +281,7 @@ let travelToShow;
 if (TravelType === 'seoul') {
   travelToShow = (
     <>
-       <S.middle>
+       <S.middle> 
             <S.block>
             <S.Image2 src={`${process.env.PUBLIC_URL}/home/list/list1.png`} alt="Description"/>
             <S.icon>

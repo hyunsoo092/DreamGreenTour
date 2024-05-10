@@ -29,3 +29,9 @@ export const flexSpaceAroundCenter = css`
   justify-content: space-around;
   align-items: center;
 `;
+
+export const flexSpaceBetweenCenter = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;

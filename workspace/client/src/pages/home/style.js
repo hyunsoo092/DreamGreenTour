@@ -158,8 +158,8 @@ S.ListWrapper = styled.div`
       font-weight: ${theme.FONT_WEIGHT.bold};
       font-family: ${theme.FONT_FAMILY.heading};
       position: absolute;
-      bottom: 49%;
-      left: -5%;
+      bottom: 50%;
+      left: -12%;
      
         } 
       } 
@@ -189,7 +189,7 @@ S.ListWrapper = styled.div`
   cursor: pointer;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  position: absolute; /* 절대 위치로 설정 */
+  position: absolute;
   left: 72%;
   bottom: 49%;
   font-size: 15px;
@@ -247,6 +247,8 @@ S.ListWrapper = styled.div`
     position: relative;
     width: 50%;
     height: 30%;
+  
+
    }
 
    
@@ -275,6 +277,21 @@ S.ListWrapper = styled.div`
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
     cursor: pointer;
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: ${theme.FONT_SIZE.h5};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    display: flex; 
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    cursor: pointer;
+    }
   `
 
  // 3번 
@@ -287,9 +304,26 @@ S.ListWrapper = styled.div`
     height: auto;
     margin-bottom: 50px;
 
+    .num1 {
+      margin-bottom: 50px;
+      font-size : 10px;
+      border: 2px solid #F06C5E;
+      border-radius: 50px / 40px;
+      padding: 10px;
+      color: #F06C5E;
+      margin-bottom: 20px;
+    }
+    
+    .num2 {
+      font-size: ${theme.FONT_SIZE.h3};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+    }
+
+
     @media screen and (min-width: 200px) and (max-width: 450px) {
     position: absolute;
-    top: 80%;
+    top: 83%;
     left: 17%;
     display: flex;
     flex-direction: column;
@@ -299,24 +333,22 @@ S.ListWrapper = styled.div`
     height: auto;
     margin-bottom: 50px;
 
-
-    }
-
     .num1 {
       margin-bottom: 50px;
-      font-size : 12px;
+      font-size : 10px;
       border: 2px solid #F06C5E;
       border-radius: 50px / 40px;
       padding: 10px;
       color: #F06C5E;
       margin-bottom: 20px;
-       }
-        
-    .num2 {
-    font-size: ${theme.FONT_SIZE.h3};
-    font-weight: ${theme.FONT_WEIGHT.bold};
-    font-family: ${theme.FONT_FAMILY.heading};
     }
+    
+    .num2 {
+      font-size: ${theme.FONT_SIZE.h5};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+    }
+  }
   `
 
   S.country = styled.div`
@@ -326,7 +358,7 @@ S.ListWrapper = styled.div`
 
     @media screen and (min-width: 200px) and (max-width: 450px) {
       position: absolute;
-      top: 96%;
+      top: 99%;
       left: 5%;
     width: 90vw;
     height: 70px ;
@@ -373,9 +405,10 @@ S.package = styled.div`
   margin: 0 auto;
   margin-top: -60px;
   margin-bottom: 50px;
-  width: 90vw;
+  width: 85vw;
   height: auto;
-  gap: 40px;
+  gap: 30px;
+  margin-left:13px;
   }
 `;
 
@@ -444,7 +477,7 @@ S.middle = styled.div`
      color: red;
 
      @media screen and (min-width: 200px) and (max-width: 450px) {
-      position: relative;
+    position: relative;
      left: 10px;
      font-size: ${theme.FONT_SIZE.h6};
      font-weight: ${theme.FONT_WEIGHT.bold};
@@ -469,8 +502,8 @@ S.Image2 = styled.img`
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border-radius: 8%;
   cursor: pointer;
   }
@@ -931,7 +964,7 @@ S.icons = styled.div`
   gap: 10px;
   border: 1px solid #e7e7e7;
   background-color: #f5f5f5;
-
+  
   @media screen and (min-width: 200px) and (max-width: 450px) {
 
   }
