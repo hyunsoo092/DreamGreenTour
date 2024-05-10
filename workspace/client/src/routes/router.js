@@ -53,20 +53,21 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/mypage",
-    element: <Mypage />,
-    children: [
-      {
-        path: "/mypage/tourSchedule",
-        element: <TourSchedule />,
-      },
-      {
-        path: "/mypage/infoUpdate",
-        element: <InfoUpdate />,
-      },
-    ],
-  },
+    {
+      path: "/mypage",
+      element: <Mypage />
+    },
+    {
+      path: "/mypage/tourSchedule",
+      element: <TourSchedule />,
+    },
+    {
+      path: "/mypage/infoUpdate", 
+      element: <InfoUpdate />,
+    },
+     
+      
+    
   {
     path: "/review",
     element: <Review />,
