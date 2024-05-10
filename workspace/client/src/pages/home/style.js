@@ -38,7 +38,7 @@ S.Wrapper = styled.div`
   @media screen and (min-width: 200px) and (max-width: 450px) {
       width: 80vw;
       height: 40vh;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       
       
   }
@@ -117,8 +117,31 @@ S.ListWrapper = styled.div`
 
   // 2번 
   S.Title1 = styled.div`
+
+    .title1 {
+      
+        margin-left: 25px; 
+       
+        padding: 10px;
+        color: #F06C5E;
+        font-size : 10px;
+        width: 30%;
+        
+
+    }
+
+    .title2 {
+      margin-bottom: -30px;
+      font-size: ${theme.FONT_SIZE.h7};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      position: absolute;
+      bottom: 50%;
+     margin-left: 150px;
+
+    }
      
-      .title1 {
+      .title3 {
       margin-top: 100px;
       margin-bottom: 20px;
       margin-left: 200px;
@@ -128,40 +151,14 @@ S.ListWrapper = styled.div`
       padding: 10px;
       color: #F06C5E;
       width: 15%; 
+      }      
 
-      @media screen and (min-width: 200px) and (max-width: 450px) {
-        margin-left: 33px;
-        margin-bottom:-10px;
-        border: 2px solid #F06C5E;
-        border-radius: 40px / 30px;
-        padding: 8px;
-        color: #F06C5E;
-        font-size : 10px;
-        width: 30%;
-        position: absolute;
-        bottom: 45%;
-        left: -2%;
-           }
-      } 
-
-     
-      .title2 {
+      .title4 {
       font-size: ${theme.FONT_SIZE.h3};
       font-weight: ${theme.FONT_WEIGHT.bold};
       font-family: ${theme.FONT_FAMILY.heading};
       margin-left: 200px;
 
-      @media screen and (min-width: 200px) and (max-width: 450px) {
-      
-      margin-bottom: -30px;
-      font-size: ${theme.FONT_SIZE.h6};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-      position: absolute;
-      bottom: 50%;
-      left: -12%;
-     
-        } 
       } 
 ` 
   
@@ -171,29 +168,32 @@ S.ListWrapper = styled.div`
  position: relative;
 
  @media screen and (min-width: 200px) and (max-width: 450px) {
-    position: relative;
+    position: absolute;
     max-width: 100vw;
     width: 90%;  
     overflow: hidden;
     height: auto;
+    top:100%;
+   
     }
 
   
  }
 
   .arrow2 {
-  position: absolute; /* 절대 위치로 설정 */
+  position: absolute;
   left: 72%;
   bottom: 100%;
   font-size: 25px;
   cursor: pointer;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  position: absolute;
-  left: 72%;
-  bottom: 49%;
+  margin-top: -20px;
+  position: relative;
   font-size: 15px;
-  cursor: pointer;
+  cursor: pointer; 
+  z-index: 5;
+
 
 }
 
@@ -209,7 +209,7 @@ S.ListWrapper = styled.div`
     @media screen and (min-width: 200px) and (max-width: 450px) {
     position: absolute;
     left: 79%;
-    bottom: 49%; 
+    bottom: 5%; 
     font-size: 15px;
     cursor: pointer;
 
@@ -228,7 +228,7 @@ S.ListWrapper = styled.div`
   justify-content: space-around;
   width: 80%;
   height: 50vh;
-  margin-top: 70px;
+  margin-bottom: 100px;
 
   }
  
@@ -244,6 +244,7 @@ S.ListWrapper = styled.div`
    overflow: hidden;
 
    @media screen and (min-width: 200px) and (max-width: 450px) {
+    bottom:10%;
     position: relative;
     width: 50%;
     height: 30%;
@@ -403,7 +404,7 @@ S.package = styled.div`
   flex-wrap: wrap;
   align-items: center;
   margin: 0 auto;
-  margin-top: -60px;
+  margin-top: 350px;
   margin-bottom: 50px;
   width: 85vw;
   height: auto;
@@ -1001,7 +1002,7 @@ display: ${(props) => (props.isOpen ? "block" : "none")};
 @media screen and (min-width: 200px) and (max-width: 450px) {
   z-index: 11;
   position: absolute;
-  transform: scale(0.5);
+  transform: scale(0.7);
   top: -99%;
   right: -50%;
 

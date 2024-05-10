@@ -63,11 +63,11 @@ const Mypage = () => {
     <div>
       {displayshow}
      
-      <button className="1" onClick={() => setDisplayContent('one')}>1번버튼</button>
+      {/* <button className="1" onClick={() => setDisplayContent('one')}>1번버튼</button>
       <button className="2" onClick={() => setDisplayContent('two')}>2번버튼</button>
       <button className="3" onClick={() => setDisplayContent('three')}>3번버튼</button>
       <button className="4" onClick={() => setDisplayContent('four')}>4번버튼</button>
-      <button className="5" onClick={() => setDisplayContent('five')}>5번버튼</button>
+      <button className="5" onClick={() => setDisplayContent('five')}>5번버튼</button> */}
     </div>
   );
 };

@@ -17,183 +17,183 @@ import moment from "moment";
 const MobileView = () => {
 
 
-//4 드롭다운
-const [travelIsOpen, travelRef, travelHandler] = useDetectClose(false);
-const [hotelIsOpen, hotelRef, hotelHandler] = useDetectClose(false);
-
-const [cacl1IsOpen, cacl1Ref, cacl1Handler] = useDetectClose(false);
-
-const [hotelContent, setHotelContent] = useState('서울');
-const [travelContent, setTravelContent] = useState('출발지➡️도착지');
-
-
-const [result, setResult] = useState(0);
-
-
-const handleMenuClick3 = (menuText) => {
-  setTravelContent(menuText);
-};
-
-const handleMenuClick4 = (menuText) => {
-  setHotelContent(menuText);
-};
-
-const increase = () => {
-  setResult(result+1)
-};
-
-const decrease = () => {
-  setResult(result-1)
-};
-
-// 클릭 이벤트 핸들러를 감싸는 새로운 함수를 만들어서 이벤트 전파를 막습니다.
-const stopPropagation = (e) => {
-  e.stopPropagation();
-};
-
-const notexit = useCallback((e) => {
-  stopPropagation(e);
-}, []);
-
-
-// 달력
-const [selectedDate, setSelectedDate] = useState(new Date());
-const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-
-const handleCalendarButtonClick = () => {
-  setIsCalendarOpen(!isCalendarOpen);
-};
-
-const handleDateChange = (date) => {
-  setSelectedDate(date);
-  setIsCalendarOpen(false); // 달력을 선택한 후에는 닫도록 설정
-};
-
-// 맨 위 박스 
-const [contentType, setContentType] = useState('flight');
-
-let contentToShow;
-
- if (contentType === 'flight') {
-  contentToShow = (
- <>
+  const [travelIsOpen, travelRef, travelHandler] = useDetectClose(false);
+  const [hotelIsOpen, hotelRef, hotelHandler] = useDetectClose(false);
+  
+  const [cacl1IsOpen, cacl1Ref, cacl1Handler] = useDetectClose(false);
+  
+  const [hotelContent, setHotelContent] = useState('서울');
+  const [travelContent, setTravelContent] = useState('출발지➡️도착지');
+  
+  
+  const [result, setResult] = useState(0);
+  
+  
+  const handleMenuClick3 = (menuText) => {
+    setTravelContent(menuText);
+  };
+  
+  const handleMenuClick4 = (menuText) => {
+    setHotelContent(menuText);
+  };
+  
+  const increase = () => {
+    setResult(result+1)
+  };
+  
+  const decrease = () => {
+    setResult(result-1)
+  };
+  
+  // 클릭 이벤트 핸들러를 감싸는 새로운 함수를 만들어서 이벤트 전파를 막습니다.
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+  
+  const notexit = useCallback((e) => {
+    stopPropagation(e);
+  }, []);
+  
+  
+  // 달력
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  
+  const handleCalendarButtonClick = () => {
+    setIsCalendarOpen(!isCalendarOpen);
+  };
+  
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setIsCalendarOpen(false); // 달력을 선택한 후에는 닫도록 설정
+  };
+  
+  // 맨 위 박스 
+  const [contentType, setContentType] = useState('flight');
+  
+  let contentToShow;
+  
+   if (contentType === 'flight') {
+    contentToShow = (
+   <>
+      <S.DropdownContainer2>
+        <button onClick={travelHandler} ref={travelRef}>{travelContent}</button> 
+      
+      <S.Menu2 isDropped={travelIsOpen}>
+          <S.Ul2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('인천➡️김해')}>인천➡️김해</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️안양')}>김포➡️안양</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️원주')}>여수➡️원주</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️원주')}>김포➡️원주</S.LinkWrapper2>
+            </S.Li2>
+            <S.Li2>
+              <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️인천')}>여수➡️인천</S.LinkWrapper2>
+            </S.Li2>
+            
+          </S.Ul2>
+      </S.Menu2>
+  
+      </S.DropdownContainer2>
+  
+    <S.CalendarContainer>
+         <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
+         <S.CalendarWrapper isOpen={isCalendarOpen}>
+           {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
+         </S.CalendarWrapper>
+     </S.CalendarContainer>
+      
     <S.DropdownContainer2>
-      <button onClick={travelHandler} ref={travelRef}>{travelContent}</button> 
+       <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
     
-    <S.Menu2 isDropped={travelIsOpen}>
+       <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
+        <S.Ul3>
+          <S.Li3>
+              <p>인원수</p>
+              <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
+              {result}
+              <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
+          </S.Li3>
+         
+        </S.Ul3>
+     </S.Menu2>
+  
+    </S.DropdownContainer2>
+  </>
+  
+    )
+  }
+  
+  
+   else if (contentType === 'hotel') {
+    contentToShow = (
+      <>
+       <S.DropdownContainer2>
+       <button onClick={hotelHandler} ref={hotelRef}>{hotelContent}</button> 
+    
+      <S.Menu2 isDropped={hotelIsOpen}>
         <S.Ul2>
           <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('인천➡️김해')}>인천➡️김해</S.LinkWrapper2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('서울')}>서울</S.LinkWrapper2>
           </S.Li2>
           <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️안양')}>김포➡️안양</S.LinkWrapper2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('경기도')}>경기도</S.LinkWrapper2>
           </S.Li2>
           <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️원주')}>여수➡️원주</S.LinkWrapper2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('충청도')}>충청도</S.LinkWrapper2>
           </S.Li2>
           <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('김포➡️원주')}>김포➡️원주</S.LinkWrapper2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('강원도')}>강원도</S.LinkWrapper2>
           </S.Li2>
           <S.Li2>
-            <S.LinkWrapper2 onClick={() => handleMenuClick3('여수➡️인천')}>여수➡️인천</S.LinkWrapper2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('전라도')}>전라도</S.LinkWrapper2>
+          </S.Li2>
+    
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('경상도')}>경상도</S.LinkWrapper2>
           </S.Li2>
           
+          <S.Li2>
+            <S.LinkWrapper2 onClick={() => handleMenuClick4('제주도')}>제주도</S.LinkWrapper2>
+          </S.Li2>
         </S.Ul2>
-    </S.Menu2>
-
-    </S.DropdownContainer2>
-
-  <S.CalendarContainer>
-       <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
-       <S.CalendarWrapper isOpen={isCalendarOpen}>
-         {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
-       </S.CalendarWrapper>
-   </S.CalendarContainer>
-    
-  <S.DropdownContainer2>
-     <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
   
-     <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
-      <S.Ul3>
-        <S.Li3>
-            <p>인원수</p>
-            <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
-            {result}
-            <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
-        </S.Li3>
-       
-      </S.Ul3>
-   </S.Menu2>
-
-  </S.DropdownContainer2>
-</>
-
-  )
-}
-
-
- else if (contentType === 'hotel') {
-  contentToShow = (
-    <>
-     <S.DropdownContainer2>
-     <button onClick={hotelHandler} ref={hotelRef}>{hotelContent}</button> 
+     </S.Menu2>
+     </S.DropdownContainer2>
   
-    <S.Menu2 isDropped={hotelIsOpen}>
-      <S.Ul2>
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('서울')}>서울</S.LinkWrapper2>
-        </S.Li2>
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('경기도')}>경기도</S.LinkWrapper2>
-        </S.Li2>
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('충청도')}>충청도</S.LinkWrapper2>
-        </S.Li2>
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('강원도')}>강원도</S.LinkWrapper2>
-        </S.Li2>
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('전라도')}>전라도</S.LinkWrapper2>
-        </S.Li2>
-  
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('경상도')}>경상도</S.LinkWrapper2>
-        </S.Li2>
+     <S.CalendarContainer>
+         <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
+         <S.CalendarWrapper isOpen={isCalendarOpen}>
+           {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
+         </S.CalendarWrapper>
+     </S.CalendarContainer>
         
-        <S.Li2>
-          <S.LinkWrapper2 onClick={() => handleMenuClick4('제주도')}>제주도</S.LinkWrapper2>
-        </S.Li2>
-      </S.Ul2>
-
-   </S.Menu2>
-   </S.DropdownContainer2>
-
-   <S.CalendarContainer>
-       <button onClick={handleCalendarButtonClick}>{moment(selectedDate).format("YYYY-MM-DD")}</button>
-       <S.CalendarWrapper isOpen={isCalendarOpen}>
-         {isCalendarOpen && <Calendar onChange={handleDateChange} value={selectedDate} formatDay={(locale, date) => moment(date).format("DD")}></Calendar>}
-       </S.CalendarWrapper>
-   </S.CalendarContainer>
-      
-      <S.DropdownContainer2>
-     <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
+        <S.DropdownContainer2>
+       <button onClick={cacl1Handler} ref={cacl1Ref}>인원수: {result} </button> 
+    
+       <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
+        <S.Ul3>
+          <S.Li3>
+              <p>인원수</p>
+              <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
+              {result}
+              <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
+          </S.Li3>
+         
+        </S.Ul3>
+     </S.Menu2>
   
-     <S.Menu2 isDropped={cacl1IsOpen} onClick={notexit}>
-      <S.Ul3>
-        <S.Li3>
-            <p>인원수</p>
-            <button onClick={decrease}> <FontAwesomeIcon icon={faMinus}/> </button>
-            {result}
-            <button onClick={increase}> <FontAwesomeIcon icon={faPlus}/> </button>
-        </S.Li3>
-       
-      </S.Ul3>
-   </S.Menu2>
-
- </S.DropdownContainer2>
-    </>
-  );
-}
+   </S.DropdownContainer2>
+      </>
+    );
+  }
+  
 
 // 서울 , 인천 사진 클릭 시 
 const navigate = useNavigate();
