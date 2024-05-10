@@ -75,7 +75,7 @@ theme.PALLETE = {
 
 theme.FONT_SIZE = {
   heading1: "56px",
-  heading2: "48x",
+  heading2: "48px",
   h1: "200px",
   h2: "40px",
   h3: "32px",

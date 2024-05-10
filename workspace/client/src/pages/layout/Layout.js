@@ -52,7 +52,7 @@ const Layout = ({ isUse = false }) => {
         <Link to={"airline"}>항공/숙박</Link>
       </S.MenuWrapper>
 
-      <S.Main>{!isUse && <Outlet />}</S.Main>
+      {!isUse && <Outlet />}
     </S.Wrapper>
   );
 };
