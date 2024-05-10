@@ -10,8 +10,6 @@ import Mypage from "../pages/mypage/Mypage";
 import TourSchedule from "../pages/mypage/tourSchedule/TourSchedule";
 import InfoUpdate from "../pages/mypage/infoUpdate/InfoUpdate";
 import Review from "../pages/review/Review";
-import Write from "../pages/review/write/Write";
-import Video from "../pages/review/video/Video";
 import Airline from "../pages/airline/Airline";
 import Search from "../pages/airline/search/Search";
 import Booking from "../pages/airline/booking/Booking";
@@ -25,6 +23,14 @@ import HTerms from "../pages/hotel/terms/HTerms";
 import HPayment from "../pages/hotel/payment/HPayment";
 import Recommend from "../pages/theme/recommend/Recommend";
 import Join from "../pages/join/Join";
+import Seoul from "../pages/review/detail/Seoul";
+import KangWon from "../pages/review/detail/KangWon";
+import Jeonla from "../pages/review/detail/Jeonla";
+import Gyeongsang from "../pages/review/detail/Gyeongsang";
+import GyeongGi from "../pages/review/detail/GyeongGi";
+import ChungCheong from "../pages/review/detail/ChungCheong";
+import Jeju from "../pages/review/detail/Jeju";
+import Write from "../pages/review/write/Write";
 
 const router = createBrowserRouter([
   {
@@ -77,14 +83,38 @@ const router = createBrowserRouter([
     element: <Review />,
     children: [
       {
-        path: "/review/write",
-        element: <Write />,
+        path: "/review/Seoul",
+        element: <Seoul />,
       },
       {
-        path: "/review/video",
-        element: <Video />,
+        path: "/review/KangWon",
+        element: <KangWon />,
+      },
+      {
+        path: "/review/Jeonla",
+        element: <Jeonla />,
+      },
+      {
+        path: "/review/Gyeongsang",
+        element: <Gyeongsang />,
+      },
+      {
+        path: "/review/GyeongGi",
+        element: <GyeongGi />,
+      },
+      {
+        path: "/review/ChungCheong",
+        element: <ChungCheong />,
+      },
+      {
+        path: "/review/Jeju",
+        element: <Jeju />,
       },
     ],
+  },
+  {
+    path: "/write",
+    element: <Write />,
   },
   {
     path: "/hotel",

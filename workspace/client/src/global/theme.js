@@ -27,7 +27,7 @@ theme.PALLETE = {
   danger: {
     pressed: "#590000",
     hover: "#940000",
-    main: "#820000",
+    main: "#B20000",
     border: "#E5AAAA",
     focus: "#F9D9D9",
     bgColor: "#FBEFEF",

@@ -85,11 +85,13 @@ const Join = () => {
             />
             <S.Join>약관동의</S.Join>
           </S.Title>
-          <FontAwesomeIcon
-            icon={faHome}
-            className="icon"
-            onClick={handleHomePage}
-          />
+          <S.Home>
+            <FontAwesomeIcon
+              icon={faHome}
+              className="icon"
+              onClick={handleHomePage}
+            />
+          </S.Home>
         </S.TitleWrapper>
         <S.SubTitle>약관내용에 먼저 동의해 주세요.</S.SubTitle>
         <S.AllCheck>
