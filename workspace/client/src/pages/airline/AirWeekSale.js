@@ -12,9 +12,9 @@ const AirWeekSale = () => {
                 </S.AirWeekSaleTitle>
             </S.AirWeekTitleDiv>
 
-        <>
+
             <AirWeekSaleComponent/>
-        </>
+
         </S.AirWeekSaleDiv>
     );
 };
