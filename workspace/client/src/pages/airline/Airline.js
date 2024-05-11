@@ -1,48 +1,45 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "../../global/global";
 import theme from "../../global/theme";
 import Layout from "../layout/Layout";
 import S from "./style";
 import TapComponent from "./TapComponent";
 import AirWeekSale from "./AirWeekSale";
+import { Link, Outlet } from "react-router-dom";
+import AirSwiper from "./AirSwiper";
 
- 
 const Airline = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout />
+    return (
+        <ThemeProvider theme={theme}>
+            <Outlet/>
+            <Layout />
 
-      <S.AirHotelTabDiv>
-        <S.AirTabHeadingDiv>
-          <S.AirTabHeading>항공</S.AirTabHeading>
-        </S.AirTabHeadingDiv>
-        <S.HotelTabHeadingDiv>
-          <S.HotelTabHeading>호텔</S.HotelTabHeading>
-        </S.HotelTabHeadingDiv>
-      </S.AirHotelTabDiv>
+            <S.AirHotelTabDiv>
+                <S.AirTabHeadingDiv>
+                    <Link to="/airline">
+                        <S.AirTabHeading>항공</S.AirTabHeading>
+                    </Link>
+                </S.AirTabHeadingDiv>
+                <S.HotelTabHeadingDiv>
+                    <Link to="/hotel">
+                        <S.HotelTabHeading>호텔</S.HotelTabHeading>
+                    </Link>
+                </S.HotelTabHeadingDiv>
+            </S.AirHotelTabDiv>
 
-      <S.DivVisualRoll>
-        <S.Image1 src="/img/picture/slide_jeju.jpg" />
-        <S.Image2 src="/img/picture/slide_pohang.jpg" />
-        <S.Image3 src="/img/picture/slide_daegu.jpg" />
-      </S.DivVisualRoll>
+            {/* AirSwiper */}
+            <AirSwiper />
 
-      <>
-        <TapComponent />
-      </>
+            {/* TapComponent */}
+            <TapComponent />
 
-      <S.AirBanner1>
-        <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
-      </S.AirBanner1>
-
-            <>
-                <AirWeekSale />
-            </>
+            <S.AirBanner1>
+                <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
+            </S.AirBanner1>
+            {/* AirWeekSale */}
+            <AirWeekSale />
         </ThemeProvider>
     );
-
 };
 
 export default Airline;
