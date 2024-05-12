@@ -52,7 +52,6 @@ useEffect(()=>{
     <S.Wrapper className="Wrapper">
       <NavLink to={'/theme'}>
     <S.ImageWrapper className="ImageWrapper">
-    {/* src={process.env.PUBLIC_URL + './Guadalupe.jpeg'}  */}
                 <S.MainImg className="MainImg" >
                   <BasicSpan color={"white"} style1={'medium'} size={'heading'} >이색 테마 여행</BasicSpan>  
                   <BasicSpan color={"black"} style1={'small'} size={'small'}>#데이트 코스 #추천 #국내</BasicSpan>

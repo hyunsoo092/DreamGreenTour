@@ -64,12 +64,12 @@ font-family: ${theme.FONT_FAMILY.secondary};
               cursor:pointer;
               /* color: gray; */
               .dropdown-content {display: block;}
-              .dropbtn {background-color: #37A551;
+              .dropbtn {background-color: #37a5512e;
                         color: rgb(24,49,83,1);
               }//호버 후 배경색
               } 
             .dropbtn {
-              background-color: #F5F6F6; //호버 전 배경색
+              background-color: #37A551; //호버 전 배경색
               color: rgb(24,49,83,1); //글자색
               padding: 13px 32px 13px 32px;
               font-size: 18px;
