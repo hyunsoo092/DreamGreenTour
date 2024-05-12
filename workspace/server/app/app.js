@@ -9,12 +9,22 @@ const port = 8000;
 
 app.use(bodyParser.json());
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true, // 인증 정보를 포함하도록 허용
-};
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://dreamgreentour.netlify.app/"
+  );
+  next();
+});
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://dreamgreentour.netlify.app/",
+    method: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 app.use("/", router);
 
 app.listen(port, () => {
