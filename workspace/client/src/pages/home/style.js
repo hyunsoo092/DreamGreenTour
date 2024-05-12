@@ -371,6 +371,8 @@ S.package = styled.div`
     height: auto;
     gap: 30px;
     margin-left: 13px;
+
+    
   }
 `;
 
