@@ -16,6 +16,9 @@ S.Container = styled.div`
   min-height: 100vh;
   padding: 0 2.6rem;
   background-color: ${({ theme }) => theme.PALLETE.backgroundColor["white"]};
+  @media (max-width: 768px) {
+    width: 360px;
+  }
 `;
 
 S.TitleWrapper = styled.div`
@@ -36,6 +39,12 @@ S.Title = styled.div`
   font-size: ${({ theme }) => theme.FONT_SIZE["h4"]};
 `;
 
+S.Home = styled.div`
+  @media (max-width: 768px) {
+    margin-right: 20px;
+  }
+`;
+
 S.Register = styled.span`
   padding-left: 8px;
   font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
@@ -43,6 +52,9 @@ S.Register = styled.span`
 
 S.SubTitle = styled.div`
   font-size: ${({ theme }) => theme.FONT_SIZE["h3"]};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.FONT_SIZE["h4"]};
+  }
 `;
 
 S.SubExplanation = styled.div`
@@ -56,6 +68,9 @@ S.RegisterWrapper = styled.div`
   margin-top: 2.6rem;
   .gender:hover {
     color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  }
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
   }
 `;
 
@@ -72,6 +87,9 @@ S.NameInput = styled.input`
   border: 1px solid ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
   font-size: ${({ theme }) => theme.FONT_SIZE["h6"]};
   margin-right: 15px;
+  @media (max-width: 768px) {
+    width: 55%;
+  }
 `;
 
 S.ManBtn = styled.button.attrs({ type: "button" })`
@@ -86,6 +104,9 @@ S.ManBtn = styled.button.attrs({ type: "button" })`
   background-color: ${({ theme }) => theme.PALLETE.backgroundColor["white"]};
   /* color: ${({ theme }) => theme.PALLETE.fontNatural[20]}; */
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 15%;
+  }
 `;
 
 S.WomanBtn = styled.button.attrs({ type: "button" })`
@@ -105,6 +126,13 @@ S.WomanBtn = styled.button.attrs({ type: "button" })`
 
   /* color: ${({ theme }) => theme.PALLETE.fontNatural[20]}; */
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 15%;
+  }
+`;
+
+S.HiddenGender = styled.input`
+  display: none;
 `;
 
 S.Input = styled.input`
@@ -115,6 +143,9 @@ S.Input = styled.input`
   min-height: 3rem;
   border: 1px solid ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
   font-size: ${({ theme }) => theme.FONT_SIZE["h6"]};
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 S.InputWrapper = styled.div`
@@ -122,6 +153,22 @@ S.InputWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
+
+S.PhoneInput = styled.input`
+  width: 80%;
+  border: none;
+  padding-left: 15px;
+  border-radius: 10px;
+  min-height: 3rem;
+  border: 1px solid ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  font-size: ${({ theme }) => theme.FONT_SIZE["h6"]};
+  margin-right: 15px;
+
+  @media (max-width: 768px) {
+    width: 55%;
+  }
+`;
+
 S.CheckBox = styled.span`
   width: 20%;
   display: flex;
@@ -134,10 +181,16 @@ S.CheckBox = styled.span`
       color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
     }
   }
+  @media (max-width: 768px) {
+    width: 40%;
+  }
 `;
 
 S.CheckText = styled.span`
   font-size: ${({ theme }) => theme.FONT_SIZE["h6"]};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.FONT_SIZE["h7"]};
+  }
 `;
 
 S.HiddenCheckBox = styled.input.attrs({ type: "checkbox" })`
@@ -154,5 +207,16 @@ S.Button = styled.button`
   margin-top: 1rem;
   color: ${({ theme }) => theme.PALLETE.fontNatural[10]};
   background-color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
+
+S.Warning = styled.p`
+  font-size: ${({ theme }) => theme.FONT_SIZE["h9"]};
+  color: ${({ theme }) => theme.PALLETE.danger["main"]};
+  padding-left: 0.7rem;
+  padding-top: 10px;
+`;
+
 export default S;

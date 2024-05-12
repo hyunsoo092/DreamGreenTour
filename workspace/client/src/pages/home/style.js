@@ -2,280 +2,250 @@ import styled, { css } from "styled-components";
 import theme from "../../global/theme";
 const S = {};
 
-
-
-// 1번 
+// 1번
 S.Section = styled.div`
-  overflow-x: hidden ;
+  overflow-x: hidden;
   width: 100vw;
   height: auto;
-`
+`;
 
 S.div = styled.div`
- overflow-x: hidden ;
+  overflow-x: hidden;
   width: 100vw;
   height: auto;
-`
+`;
 
 S.ImageWrapper = styled.div`
-    width: 100vw;
-    height: 50vh;
-    background-image: url(${process.env.PUBLIC_URL}/home/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;   
-    background-position: center;
+  width: 100vw;
+  height: 50vh;
+  background-image: url(${process.env.PUBLIC_URL}/home/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 S.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   float: right;
-  margin: 20px 50px 20px 0  ;
-  width:  20%;
+  margin: 20px 50px 20px 0;
+  width: 20%;
   height: 90%;
   background-color: pink;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-      width: 80vw;
-      height: 40vh;
-      margin-bottom: 20px;
-      
-      
+    width: 80vw;
+    height: 40vh;
+    margin-bottom: 20px;
   }
-  
-`
+`;
 
 S.LetterWrapper = styled.div`
-    font-size: ${theme.FONT_SIZE.h4};
-    font-weight: ${theme.FONT_WEIGHT.bold};
-    font-family: ${theme.FONT_FAMILY.heading};
-    line-height: 40px;
-    width: 100%;
-    height: 20%;
-    
-  `
+  font-size: ${theme.FONT_SIZE.h4};
+  font-weight: ${theme.FONT_WEIGHT.bold};
+  font-family: ${theme.FONT_FAMILY.heading};
+  line-height: 40px;
+  width: 100%;
+  height: 20%;
+`;
 
 S.ListWrapper = styled.div`
-    width: 100%;
-    height: 20%;  
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 2px solid black;
-   
-    button {
-        font-size: ${theme.FONT_SIZE.h6};
-        font-weight: ${theme.FONT_WEIGHT.regular};
-        font-family: ${theme.FONT_FAMILY.body};
-        height: 70%;
-        margin: 20px 0 0 0;
-        background-color: transparent;
-        cursor: pointer;
-      }
-  `
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
 
-  S.Show = styled.div`
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 8px;
-    margin: 15px 0 15px 0 ;
-    
-    
-      button {
-      font-size: ${theme.FONT_SIZE.h7};
-      font-weight: ${theme.FONT_WEIGHT.regular};
-      font-family: ${theme.FONT_FAMILY.body};
-      
-        height: 90%;
-        width: 90%;
-        margin: 0 auto;
-        cursor: pointer;
-      }
-    
-  `
+  button {
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.body};
+    height: 70%;
+    margin: 20px 0 0 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+`;
 
-  S.ButtonWrapper = styled.div`
-    width: 100%;
-    height: 20%;
-    button {
-      font-size: ${theme.FONT_SIZE.h6};
-      font-weight: ${theme.FONT_WEIGHT.regular};
-      font-family: ${theme.FONT_FAMILY.body};
-    
-      width: 90%;
-      height: 90%;
-      margin-left: 14px;
-      border-radius: 8px;
-      background-color: #333333;
-      color: white;
-      cursor: pointer;
-    }
-  `
+S.Show = styled.div`
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 8px;
+  margin: 15px 0 15px 0;
 
+  button {
+    font-size: ${theme.FONT_SIZE.h7};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.body};
 
-  // 2번 
-  S.Title1 = styled.div`
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+`;
 
-    .title1 {
-      
-        margin-left: 25px; 
-       
-        padding: 10px;
-        color: #F06C5E;
-        font-size : 10px;
-        width: 30%;
-        
+S.ButtonWrapper = styled.div`
+  width: 100%;
+  height: 20%;
+  button {
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.body};
 
-    }
+    width: 90%;
+    height: 90%;
+    margin-left: 14px;
+    border-radius: 8px;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+  }
+`;
 
-    .title2 {
-      margin-bottom: -30px;
-      font-size: ${theme.FONT_SIZE.h7};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-      position: absolute;
-      bottom: 50%;
-     margin-left: 150px;
+// 2번
+S.Title1 = styled.div`
+  .title1 {
+    margin-left: 25px;
+    padding: 10px;
+    color: #f06c5e;
+    font-size: 10px;
+    width: 30%;
+  }
 
-    }
-     
-      .title3 {
-      margin-top: 100px;
-      margin-bottom: 20px;
-      margin-left: 200px;
-      font-size : 12px;
-      border: 2px solid #F06C5E;
-      border-radius: 50px / 40px;
-      padding: 10px;
-      color: #F06C5E;
-      width: 15%; 
-      }      
-
-      .title4 {
-      font-size: ${theme.FONT_SIZE.h3};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-      margin-left: 200px;
-
-      } 
-` 
-  
-  S.region = styled.div`
-
-.slick-list {
- position: relative;
-
- @media screen and (min-width: 200px) and (max-width: 450px) {
+  .title2 {
+    top: 68%;
+    font-size: ${theme.FONT_SIZE.h7};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
     position: absolute;
-    max-width: 100vw;
-    width: 90%;  
-    overflow: hidden;
-    height: auto;
-    top:100%;
-   
-    }
+    bottom: 50%;
+    margin-left: 150px;
+  }
 
-  
- }
+  .title3 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    font-size: 12px;
+    border: 2px solid #f06c5e;
+    border-radius: 50px / 40px;
+    padding: 10px;
+    color: #f06c5e;
+    width: 15%;
+  }
+
+  .title4 {
+    font-size: ${theme.FONT_SIZE.h3};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    margin-left: 200px;
+  }
+`;
+
+S.region = styled.div`
+  .slick-list {
+    position: relative;
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: absolute;
+      max-width: 100vw;
+      width: 90%;
+      overflow: hidden;
+      height: auto;
+      top: 100%;
+    }
+  }
 
   .arrow2 {
-  position: absolute;
-  left: 72%;
-  bottom: 100%;
-  font-size: 25px;
-  cursor: pointer;
-
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-  margin-top: -20px;
-  position: relative;
-  font-size: 15px;
-  cursor: pointer; 
-  z-index: 5;
-
-
-}
-
-}
-
-  .arrow1 {
     position: absolute;
-    left: 75%;
-    bottom: 100%; 
+    left: 72%;
+    bottom: 100%;
     font-size: 25px;
     cursor: pointer;
 
     @media screen and (min-width: 200px) and (max-width: 450px) {
+      margin-top: -20px;
+      position: relative;
+      font-size: 15px;
+      cursor: pointer;
+      z-index: 5;
+    }
+  }
+
+  .arrow1 {
     position: absolute;
-    left: 79%;
-    bottom: 5%; 
-    font-size: 15px;
+    left: 75%;
+    bottom: 100%;
+    font-size: 25px;
     cursor: pointer;
 
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: absolute;
+      left: 79%;
+      bottom: 5%;
+      font-size: 15px;
+      cursor: pointer;
     }
   }
 
   .slick-slide {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  height: 50vh;
-  margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: 50vh;
+    margin-top: 60px;
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      height: 50vh;
+      margin-bottom: 100px;
+    }
+  }
+`;
+
+S.Circle = styled.div`
+  position: relative;
+  width: 15%;
+  height: 70%;
+  border-radius: 50%;
+  overflow: hidden;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  height: 50vh;
-  margin-bottom: 100px;
-
-  }
- 
-   }
-`
-    
-  S.Circle = styled.div`
-  
-   position: relative;
-   width: 15%;
-   height: 70%;
-   border-radius:50%;
-   overflow: hidden;
-
-   @media screen and (min-width: 200px) and (max-width: 450px) {
-    bottom:10%;
+    bottom: 10%;
     position: relative;
     width: 50%;
     height: 30%;
-  
-   }
-  `
-  
-  S.Image1 = styled.img`
-   width:  100%;
-   height: 100%;
-   background-repeat: no-repeat;
-   background-size: cover; 
-   cursor: pointer;
+  }
+`;
+S.Image1 = styled.img`
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+`;
 
-  `
+S.Text = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: ${theme.FONT_SIZE.h3};
+  font-weight: ${theme.FONT_WEIGHT.bold};
+  font-family: ${theme.FONT_FAMILY.heading};
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  cursor: pointer;
 
-  S.Text = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: ${theme.FONT_SIZE.h3};
-    font-weight: ${theme.FONT_WEIGHT.bold};
-    font-family: ${theme.FONT_FAMILY.heading};
-    display: flex; 
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    cursor: pointer;
-
-    @media screen and (min-width: 200px) and (max-width: 450px) {
+  @media screen and (min-width: 200px) and (max-width: 450px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -284,43 +254,42 @@ S.ListWrapper = styled.div`
     font-size: ${theme.FONT_SIZE.h5};
     font-weight: ${theme.FONT_WEIGHT.bold};
     font-family: ${theme.FONT_FAMILY.heading};
-    display: flex; 
+    display: flex;
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
     cursor: pointer;
-    }
-  `
+  }
+`;
 
- // 3번 
-  S.top = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-items: center;
-    width: 60%;
-    height: auto;
+// 3번
+S.top = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  margin-bottom: 50px;
+
+  .num1 {
     margin-bottom: 50px;
+    font-size: 10px;
+    border: 2px solid #f06c5e;
+    border-radius: 50px / 40px;
+    padding: 10px;
+    color: #f06c5e;
+    margin-bottom: 20px;
+  }
 
-    .num1 {
-      margin-bottom: 50px;
-      font-size : 10px;
-      border: 2px solid #F06C5E;
-      border-radius: 50px / 40px;
-      padding: 10px;
-      color: #F06C5E;
-      margin-bottom: 20px;
-    }
-    
-    .num2 {
-      font-size: ${theme.FONT_SIZE.h3};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-    }
+  .num2 {
+    font-size: ${theme.FONT_SIZE.h3};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+  }
 
-
-    @media screen and (min-width: 200px) and (max-width: 450px) {
+  @media screen and (min-width: 200px) and (max-width: 450px) {
     position: absolute;
-    top: 83%;
+    bottom: -20%;
     left: 17%;
     display: flex;
     flex-direction: column;
@@ -332,58 +301,54 @@ S.ListWrapper = styled.div`
 
     .num1 {
       margin-bottom: 50px;
-      font-size : 10px;
-      border: 2px solid #F06C5E;
+      font-size: 10px;
+      border: 2px solid #f06c5e;
       border-radius: 50px / 40px;
       padding: 10px;
-      color: #F06C5E;
+      color: #f06c5e;
       margin-bottom: 20px;
     }
-    
+
     .num2 {
       font-size: ${theme.FONT_SIZE.h5};
       font-weight: ${theme.FONT_WEIGHT.bold};
       font-family: ${theme.FONT_FAMILY.heading};
     }
   }
-  `
+`;
 
-  S.country = styled.div`
-    width: 40vw;
-    height: 70px ;
-    margin: 0 auto;
+S.country = styled.div`
+  width: 40vw;
+  height: 70px;
+  margin: 0 auto;
 
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-      position: absolute;
-      top: 99%;
-      left: 5%;
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    position: absolute;
+    bottom: -25%;
+    left: 5%;
     width: 90vw;
-    height: 70px ;
+    height: 70px;
     margin: 0 auto;
+  }
 
-    }
-    
-  
-    ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    }
-    
-    button {
-      background-color: transparent;
-      cursor: pointer;
-    }
-    
-    li {
-      font-size: ${theme.FONT_SIZE.h7};
-      font-weight: ${theme.FONT_WEIGHT.bold};
-      font-family: ${theme.FONT_FAMILY.heading};
-      margin-bottom: 20px;
-     
-    }
-  `
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  li {
+    font-size: ${theme.FONT_SIZE.h7};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    margin-bottom: 20px;
+  }
+`;
 
 S.package = styled.div`
   display: flex;
@@ -396,16 +361,16 @@ S.package = styled.div`
   gap: 40px;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 350px;
-  margin-bottom: 50px;
-  width: 85vw;
-  height: auto;
-  gap: 30px;
-  margin-left:13px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 360px;
+    margin-bottom: 50px;
+    width: 85vw;
+    height: auto;
+    gap: 30px;
+    margin-left: 13px;
   }
 `;
 
@@ -413,33 +378,32 @@ S.middle = styled.div`
   width: 15vw;
   cursor: pointer;
   margin: 0 auto;
-  
+
   @media screen and (min-width: 200px) and (max-width: 450px) {
     width: 35vw;
     cursor: pointer;
     margin: 0 auto;
   }
-    
-  .big  {   
-     position: relative;
-     left: 20px;
-     font-size: ${theme.FONT_SIZE.h6};
-     font-weight: ${theme.FONT_WEIGHT.bold};
-     font-family: ${theme.FONT_FAMILY.heading};
-     padding: 7px;
 
-     @media screen and (min-width: 200px) and (max-width: 450px) {
-     position: relative;
-     left: 10px;
-     font-size: ${theme.FONT_SIZE.h7};
-     font-weight: ${theme.FONT_WEIGHT.bold};
-     font-family: ${theme.FONT_FAMILY.heading};
-     padding: 7px;
+  .big {
+    position: relative;
+    left: 20px;
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    padding: 7px;
 
-     }
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: relative;
+      left: 10px;
+      font-size: ${theme.FONT_SIZE.h7};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      padding: 7px;
     }
-  
-   .small {
+  }
+
+  .small {
     position: relative;
     left: 20px;
     font-size: ${theme.FONT_SIZE.h9};
@@ -447,48 +411,46 @@ S.middle = styled.div`
     font-family: ${theme.FONT_FAMILY.heading};
     padding: 7px;
     svg path {
-    fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
+      fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: relative;
+      left: 10px;
+      font-size: ${theme.FONT_SIZE.h9};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      padding: 7px;
+      svg path {
+        fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
       }
-      
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-        position: relative;
-        left: 10px;
-        font-size: ${theme.FONT_SIZE.h9};
-        font-weight: ${theme.FONT_WEIGHT.bold};
-        font-family: ${theme.FONT_FAMILY.heading};
-        padding: 7px;
-        svg path {
-          fill: ${({ theme }) => theme.PALLETE.primary.mainGreen100};
-           }
-      }
-    
+    }
   }
-   
-   .price2 {
-     position: relative;
-     left: 20px;
-     font-size: ${theme.FONT_SIZE.h6};
-     font-weight: ${theme.FONT_WEIGHT.bold};
-     font-family: ${theme.FONT_FAMILY.heading};
-     padding: 7px;
-     color: red;
 
-     @media screen and (min-width: 200px) and (max-width: 450px) {
+  .price2 {
     position: relative;
-     left: 10px;
-     font-size: ${theme.FONT_SIZE.h6};
-     font-weight: ${theme.FONT_WEIGHT.bold};
-     font-family: ${theme.FONT_FAMILY.heading};
-     padding: 7px;
-     color: red;
-     }
-   }
+    left: 20px;
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    padding: 7px;
+    color: red;
 
-`
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      position: relative;
+      left: 10px;
+      font-size: ${theme.FONT_SIZE.h6};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      padding: 7px;
+      color: red;
+    }
+  }
+`;
 S.block = styled.div`
   position: relative;
   display: inline-block;
-`
+`;
 
 S.Image2 = styled.img`
   display: block;
@@ -498,46 +460,41 @@ S.Image2 = styled.img`
   cursor: pointer;
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  display: block;
-  width: 150px;
-  height: 150px;
-  border-radius: 8%;
-  cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 8%;
+    cursor: pointer;
   }
-  
 `;
-
 
 S.icon = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
   width: 50px;
-  
+
   button {
     cursor: pointer;
     & path {
       color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
     }
-
   }
-  `
+`;
 
+// 4번
 
-
-// 4번 
-
- S.imagine = styled.h4`
-   margin: 0 auto;
-   margin-top: 30px;
-   align-items: center;
-   position: relative;
-   left: 10%;
-   color: grey;
-   font-size: ${theme.FONT_SIZE.h4};
-   font-weight: ${theme.FONT_WEIGHT.light};
-   font-family: ${theme.FONT_FAMILY.heading};
-`
+S.imagine = styled.h4`
+  margin: 0 auto;
+  margin-top: 30px;
+  align-items: center;
+  position: relative;
+  left: 10%;
+  color: grey;
+  font-size: ${theme.FONT_SIZE.h4};
+  font-weight: ${theme.FONT_WEIGHT.light};
+  font-family: ${theme.FONT_FAMILY.heading};
+`;
 
 S.keyword = styled.div`
   display: flex;
@@ -562,53 +519,50 @@ S.keyword = styled.div`
     font-size: 32px;
     border-bottom: 2px solid red;
   }
-  
-`
+`;
 
 S.plays = styled.div`
-
-@media screen and (min-width: 200px) and (max-width: 450px) { 
+  @media screen and (min-width: 200px) and (max-width: 450px) {
     display: none;
-}
+  }
 
-.slick-list {
-  position: relative; /* slick-list에 상대 위치 설정 */
-}
+  .slick-list {
+    position: relative; /* slick-list에 상대 위치 설정 */
+  }
 
   .arrow2 {
-  position: absolute; /* 절대 위치로 설정 */
-  left: 70%;
-  bottom: 100%;
-  font-size: 25px;
-  cursor: pointer;
-}
+    position: absolute; /* 절대 위치로 설정 */
+    left: 70%;
+    bottom: 100%;
+    font-size: 25px;
+    cursor: pointer;
+  }
 
   .arrow1 {
     position: absolute;
     left: 73%;
-    bottom: 100%; 
+    bottom: 100%;
     font-size: 25px;
     cursor: pointer;
   }
 
   .slick-slide {
-  width: 70vw;
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 60px;  
+    width: 70vw;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 60px;
   }
-`
-
+`;
 
 S.DropdownContainer = styled.div`
   position: relative;
   text-align: center;
 `;
 
- S.DropdownButton = styled.div`
+S.DropdownButton = styled.div`
   cursor: pointer;
   color: red;
   border-bottom: 2px solid red;
@@ -673,23 +627,22 @@ S.Ul = styled.ul`
   align-items: center;
 `;
 
- S.Li = styled.li``;
+S.Li = styled.li``;
 
-  S.LinkWrapper = styled.a`
+S.LinkWrapper = styled.a`
   font-size: 16px;
   text-decoration: none;
   color: white;
   cursor: pointer;
 `;
 
-// 맨 위 input box 
+// 맨 위 input box
 
-S.DropdownContainer2= styled.div`
+S.DropdownContainer2 = styled.div`
   position: relative;
   text-align: center;
   height: 100%;
 `;
-
 
 S.Menu2 = styled.div`
   background: white;
@@ -732,15 +685,14 @@ S.Ul2 = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
 `;
 
- S.Li2 = styled.li`
+S.Li2 = styled.li`
   border: 2px solid black;
   padding: 5px;
- `;
+`;
 
-  S.LinkWrapper2 = styled.a`
+S.LinkWrapper2 = styled.a`
   cursor: pointer;
 `;
 
@@ -760,53 +712,45 @@ S.Ul3 = styled.ul`
   justify-content: space-around;
   align-items: center;
   font-size: 20px;
-  
 `;
 
 S.Li3 = styled.li`
   display: flex;
   gap: 15px;
   align-items: center; /* 세로 중앙 정렬 추가 */
-  
+
   p {
     white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 설정 */
     margin-right: 15px; /* 아이콘과의 간격을 조절할 수 있습니다. */
   }
-  
+
   button {
     font-size: 20px;
   }
 `;
 
-
-
-
 S.play = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  
- 
-  
+
   .big {
-  font-size: ${theme.FONT_SIZE.h6};
-  font-weight: ${theme.FONT_WEIGHT.bold};
-  font-family: ${theme.FONT_FAMILY.heading};
-  position: relative;
-  left: 30%;
-  padding: 5px;
-  
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    position: relative;
+    left: 30%;
+    padding: 5px;
   }
   .small {
-  font-size: ${theme.FONT_SIZE.h9};
-  font-weight: ${theme.FONT_WEIGHT.bold};
-  font-family: ${theme.FONT_FAMILY.heading};
-  position: relative;
-  left: 32%;
-  margin-bottom: 15px;
+    font-size: ${theme.FONT_SIZE.h9};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    position: relative;
+    left: 32%;
+    margin-bottom: 15px;
   }
-
-`
+`;
 S.Image3 = styled.img`
   width: 20vw;
   height: 35vh;
@@ -816,11 +760,11 @@ S.Image3 = styled.img`
   margin-bottom: 20px;
   cursor: pointer;
   transition: transform 0.5s ease;
-  
+
   &:hover {
     transform: scale(1.2);
   }
-`
+`;
 
 S.Grids = styled.div`
   width: 70vw;
@@ -834,41 +778,38 @@ S.Grids = styled.div`
     "5 6 7 8";
   grid-gap: 20px;
 
-#1 {
+  #1 {
+    grid-area: 1;
+  }
 
-  grid-area: 1;
-}
+  #2 {
+    grid-area: 2;
+  }
 
-#2 {
-  grid-area: 2;
- 
-}
+  #3 {
+    grid-area: 3;
+  }
 
+  #4 {
+    grid-area: 4;
+  }
 
-#3 {
-  grid-area: 3;
-}
+  #5 {
+    grid-area: 5;
+  }
 
-#4 {
-  grid-area: 4;
-}
+  #6 {
+    grid-area: 6;
+  }
 
-#5 {
-  grid-area: 5;
-}
+  #7 {
+    grid-area: 7;
+  }
 
-#6 {
-  grid-area: 6;
-}
-
-#7 {
-  grid-area: 7;
-}
-
-#8 {
-  grid-area: 8;
-}
-`
+  #8 {
+    grid-area: 8;
+  }
+`;
 
 S.Grid = styled.div`
   display: flex;
@@ -876,26 +817,26 @@ S.Grid = styled.div`
   gap: 15px;
   cursor: pointer;
   .theme {
-      font-size : 12px;
-      border: 2px solid #F06C5E;
-      border-radius: 50px / 40px;
-      padding: 10px;
-      color: #F06C5E;
-      width: 75%;
+    font-size: 12px;
+    border: 2px solid #f06c5e;
+    border-radius: 50px / 40px;
+    padding: 10px;
+    color: #f06c5e;
+    width: 75%;
   }
 
   .special {
-  font-size: ${theme.FONT_SIZE.h4};
-  font-weight: ${theme.FONT_WEIGHT.bold};
-  font-family: ${theme.FONT_FAMILY.heading};
+    font-size: ${theme.FONT_SIZE.h4};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
   }
 
   .price {
-   font-size: ${theme.FONT_SIZE.h6};
-  font-weight: ${theme.FONT_WEIGHT.regular};
-  font-family: ${theme.FONT_FAMILY.heading};
-  padding: 5px;
-  margin: 0 auto;
+    font-size: ${theme.FONT_SIZE.h6};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.heading};
+    padding: 5px;
+    margin: 0 auto;
   }
 
   button {
@@ -904,11 +845,11 @@ S.Grid = styled.div`
     font-size: ${theme.FONT_SIZE.h4};
     margin-top: 40px;
     position: relative;
-    border-bottom:5px solid grey;
-    width: fit-content; 
+    border-bottom: 5px solid grey;
+    width: fit-content;
     cursor: pointer;
-    }
-`
+  }
+`;
 
 S.Image4 = styled.img`
   width: 18vw;
@@ -922,7 +863,6 @@ S.Image4 = styled.img`
   }
 `;
 
- 
 S.end = styled.div`
   width: 80vw;
   margin: 0 auto;
@@ -931,81 +871,76 @@ S.end = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  .last { 
-  font-size: ${theme.FONT_SIZE.h3};
-  font-weight: ${theme.FONT_WEIGHT.bold};
-  font-family: ${theme.FONT_FAMILY.heading};
-  margin-bottom: 30px;
+  .last {
+    font-size: ${theme.FONT_SIZE.h3};
+    font-weight: ${theme.FONT_WEIGHT.bold};
+    font-family: ${theme.FONT_FAMILY.heading};
+    margin-bottom: 30px;
 
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-    font-size: ${theme.FONT_SIZE.h4};
-  font-weight: ${theme.FONT_WEIGHT.bold};
-  font-family: ${theme.FONT_FAMILY.heading};
-  margin-bottom: 20px;
-   }
+    @media screen and (min-width: 200px) and (max-width: 450px) {
+      font-size: ${theme.FONT_SIZE.h4};
+      font-weight: ${theme.FONT_WEIGHT.bold};
+      font-family: ${theme.FONT_FAMILY.heading};
+      margin-bottom: 20px;
+    }
   }
 
   @media screen and (min-width: 200px) and (max-width: 450px) {
-  width: 90vw;
-  margin: 0 auto;
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-right: 50px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 50px;
   }
-`
+`;
 S.icons = styled.div`
   margin-left: 30px;
   display: flex;
   gap: 10px;
   border: 1px solid #e7e7e7;
   background-color: #f5f5f5;
-  
-  @media screen and (min-width: 200px) and (max-width: 450px) {
 
+  @media screen and (min-width: 200px) and (max-width: 450px) {
   }
 
   p {
     line-height: 1.5; /* 예시로 줄 간격을 1.5배로 설정 */
   }
-`
+`;
 
 // 달력
 S.CalendarContainer = styled.div`
-    position: relative;
-        height: 90%;
-        width: 90%;
-        margin: 0 auto;
-        cursor: pointer;  
-           button {  
-             font-size: ${theme.FONT_SIZE.h7};
-             font-weight: ${theme.FONT_WEIGHT.regular};
-             font-family: ${theme.FONT_FAMILY.body};
-             width: 100%;
-
-    }
+  position: relative;
+  height: 90%;
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  button {
+    font-size: ${theme.FONT_SIZE.h7};
+    font-weight: ${theme.FONT_WEIGHT.regular};
+    font-family: ${theme.FONT_FAMILY.body};
+    width: 100%;
+  }
 `;
-
 
 S.CalendarWrapper = styled.div`
-z-index: 11;
-position: absolute;
-top: 100%;
-left: -20%;
-display: ${(props) => (props.isOpen ? "block" : "none")};
-
-@media screen and (min-width: 200px) and (max-width: 450px) {
   z-index: 11;
   position: absolute;
-  transform: scale(0.7);
-  top: -99%;
-  right: -50%;
+  top: 100%;
+  left: -20%;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
 
-display: ${(props) => (props.isOpen ? "block" : "none")};
-}
+  @media screen and (min-width: 200px) and (max-width: 450px) {
+    z-index: 11;
+    position: absolute;
+    transform: scale(0.7);
+    top: -99%;
+    right: -50%;
 
+    display: ${(props) => (props.isOpen ? "block" : "none")};
+  }
 `;
-
 
 export default S;

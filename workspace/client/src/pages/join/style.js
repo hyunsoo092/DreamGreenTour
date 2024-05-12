@@ -17,6 +17,9 @@ S.Container = styled.div`
   width: 768px;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.PALLETE.backgroundColor["white"]};
+  @media (max-width: 768px) {
+    width: 360px;
+  }
 `;
 
 S.TitleWrapper = styled.div`
@@ -37,13 +40,25 @@ S.Title = styled.div`
   font-size: ${({ theme }) => theme.FONT_SIZE["h4"]};
 `;
 
+S.Home = styled.div`
+  @media (max-width: 768px) {
+    margin-right: 20px;
+  }
+`;
+
 S.Join = styled.span`
   padding-left: 8px;
   font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
+  @media (max-width: 768px) {
+    padding-right: -15px;
+  }
 `;
 
 S.SubTitle = styled.div`
   font-size: ${({ theme }) => theme.FONT_SIZE["h3"]};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.FONT_SIZE["h4"]};
+  }
 `;
 
 S.AllCheck = styled.div`
@@ -62,6 +77,9 @@ S.AllCheck = styled.div`
     & path {
       color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
     }
+  }
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 
@@ -93,6 +111,9 @@ S.Check = styled.div`
       color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
     }
   }
+  @media (max-width: 768px) {
+    width: 85%;
+  }
 `;
 
 S.CheckBox = styled.input.attrs({ type: "checkbox" })`
@@ -114,6 +135,9 @@ S.Button = styled.button`
   margin-top: 1rem;
   color: ${({ theme }) => theme.PALLETE.fontNatural[10]};
   background-color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export default S;

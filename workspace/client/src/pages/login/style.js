@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { flexCenterColumn } from "../../global/common";
 
 const S = {};
@@ -15,6 +15,9 @@ S.Container = styled.div`
   width: 768px;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.PALLETE.backgroundColor["white"]};
+  @media (max-width: 768px) {
+    width: 360px;
+  }
 `;
 
 S.Title = styled.div`
@@ -28,6 +31,9 @@ S.Title = styled.div`
     height: 24px;
     margin-left: 2.6rem;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    text-align: left;
   }
 `;
 
@@ -45,11 +51,22 @@ S.LogoTitle = styled.span`
   font-size: ${({ theme }) => theme.FONT_SIZE["h2"]};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
   color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.FONT_SIZE["h4"]};
+    padding-right: 0.5rem;
+  }
+`;
+
+S.Form = styled.form`
+  margin-bottom: 1rem;
 `;
 
 S.Input = styled.div`
   margin-top: 2rem;
   padding: 0 2.6rem;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 S.Email = styled.input`
@@ -97,7 +114,9 @@ S.CheckBox = styled.div`
     margin-right: 15px;
     width: 24px;
     height: 24px;
-    color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    & path {
+      color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+    }
   }
 `;
 
@@ -115,9 +134,9 @@ S.LoginBtn = styled.button`
   width: 100%;
   height: 2.6rem;
   border-radius: 20px;
-  color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  color: ${({ theme }) => theme.PALLETE.fontNatural[10]};
   border: 1px solid ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
-  background-color: ${({ theme }) => theme.PALLETE.backgroundColor["white"]};
+  background-color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
 `;
 
 S.SearchWrapper = styled.div`
@@ -134,6 +153,18 @@ S.SearchWrapper = styled.div`
     color: ${({ theme }) => theme.PALLETE.shade["green300"]};
     text-decoration: underline;
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 15px;
+  }
+`;
+
+S.Search = styled.div`
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+    padding-left: 15px;
+  }
 `;
 
 S.SearchEmail = styled.span`
@@ -146,6 +177,11 @@ S.EasyLoginWrapper = styled.div`
   margin-top: 4.5rem;
   padding: 0 2.6rem;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    flex-direction: column;
+    padding-left: 15px;
+  }
 `;
 
 S.Naver = styled.button`
@@ -155,6 +191,10 @@ S.Naver = styled.button`
     no-repeat 0 0 / 2.6rem;
   margin-right: 20px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    padding-left: 15px;
+  }
 `;
 
 S.Kakao = styled.button`
@@ -164,6 +204,9 @@ S.Kakao = styled.button`
     no-repeat 0 0 / 2.6rem;
   margin-right: 20px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 S.Apple = styled.button`
@@ -172,6 +215,17 @@ S.Apple = styled.button`
   background: url(https://image.hanatour.com/usr/static/img2/mobile/com/btn_apple_192x192.png)
     no-repeat 0 0 / 2.6rem;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    padding-left: 15px;
+  }
+`;
+
+S.Warning = styled.p`
+  font-size: ${({ theme }) => theme.FONT_SIZE["h9"]};
+  color: ${({ theme }) => theme.PALLETE.danger["main"]};
+  padding-left: 3rem;
+  padding-top: 10px;
 `;
 
 export default S;

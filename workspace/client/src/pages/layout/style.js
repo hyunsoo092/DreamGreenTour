@@ -8,16 +8,22 @@ import {
 
 const S = {};
 
-
 S.Wrapper = styled.div`
   ${flexCenterColumn}
-  
+  @media (max-width: 768px) {
+    width: 360px;
+  }
 `;
 
 S.Logo = styled.h1`
   font-size: ${({ theme }) => theme.FONT_SIZE["h2"]};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT["bold"]};
   color: ${({ theme }) => theme.PALLETE.primary["mainGreen100"]};
+  cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.FONT_SIZE["h3"]};
+    margin-left: 3rem;
+  }
 `;
 
 S.LogoWrapper = styled.div`
@@ -26,45 +32,20 @@ S.LogoWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 48px;
-
-  .icon1 {
-    color: #bec4c9;
-    font-size: 24px;
-    padding: 4px;
-    margin-left: -45px;
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-    display: none;
-  }
-}
-
-   .icon2 {
-    color: #bec4c9;
-    font-size: 24px;
-    padding: 4px;
-    margin-left: -45px;
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-      font-size: 25px;
-      margin-left: 20px;
-
+  font-size: 24px;
+  @media (max-width: 768px) {
+    .userIcon {
+      margin-top: 2rem;
+      margin-left: -19.7rem;
+      margin-bottom: 8.5rem;
     }
-   }
-   
-  
-
-  input {
-    @media screen and (min-width: 200px) and (max-width: 450px) {
-    display: none;
   }
-  }
- 
 `;
 
 S.LoginWrapper = styled.div`
   margin-left: auto;
   height: 48px;
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-    display: none;
-  }
+
   .icon {
     height: 40px;
   }
@@ -74,8 +55,21 @@ S.Search = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: 200px) and (max-width: 450px)  { 
-    margin-left: -20px;
+  @media (max-width: 768px) {
+    margin-left: -3rem;
+    flex-direction: column;
+  }
+`;
+
+S.SearchInput = styled.div`
+  .icon {
+    color: #bec4c9;
+    font-size: 24px;
+    padding-top: 5px;
+    margin-left: -45px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: row;
   }
 `;
 
@@ -99,6 +93,9 @@ S.Input = styled.input`
   border-radius: 45px;
   text-align: start;
   padding-left: 20px;
+  @media (max-width: 768px) {
+    width: 320px;
+  }
 `;
 
 S.MenuWrapper = styled.div`
@@ -107,8 +104,8 @@ S.MenuWrapper = styled.div`
   margin-top: 20px;
   font-size: ${({ theme }) => theme.FONT_SIZE["h5"]};
   ${flexSpaceAroundCenter}
-  @media screen and (min-width: 200px) and (max-width: 450px) {
-    display: none;
+  @media (max-width: 768px) {
+    width: 350px;
   }
 `;
 
@@ -118,7 +115,11 @@ S.Menu = styled.div`
   ${flexEvenlyCenter}
   margin-left: -30px;
   border-right: 1px solid lightgray;
-
+  @media (max-width: 768px) {
+    .icon {
+      margin-left: 30px;
+    }
+  }
 `;
 
 S.Main = styled.main`
