@@ -10,39 +10,38 @@ import HotelSearchContainer from "./HotelSearchContainer";
 import MdRecommand from "./MdRecommand";
 import PopularHotelSwiper from "./PopularHotelSwiper";
 
-
 const Hotel = () => {
 
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout isUse={true} />
+      <S.AirHotelTabDiv>
+        <S.AirTabHeadingDiv>
+          <Link to="/airline">
+            <S.AirTabHeading>항공</S.AirTabHeading>
+          </Link>
+        </S.AirTabHeadingDiv>
+        <S.HotelTabHeadingDiv>
+          <Link to="/hotel">
+            <S.HotelTabHeading>호텔</S.HotelTabHeading>
+          </Link>
+        </S.HotelTabHeadingDiv>
+      </S.AirHotelTabDiv>
 
-    return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Layout />
-            <S.AirHotelTabDiv>
-                <S.AirTabHeadingDiv>
-                    <Link to="/airline">
-                        <S.AirTabHeading>항공</S.AirTabHeading>
-                    </Link>
-                </S.AirTabHeadingDiv>
-                <S.HotelTabHeadingDiv>
-                    <Link to="/hotel">
-                        <S.HotelTabHeading>호텔</S.HotelTabHeading>
-                    </Link>
-                </S.HotelTabHeadingDiv>
-            </S.AirHotelTabDiv>
 
-            <HotelSwiper />
-            <HotelSearchContainer />
+      <HotelSwiper />
+      <HotelSearchContainer />
 
-            <S.DivHotelBanner1>
-                <S.ImageHotelBanner1 src="/img/hotelBanner1.png"></S.ImageHotelBanner1>
-            </S.DivHotelBanner1>
+      <S.DivHotelBanner1>
+        <S.ImageHotelBanner1 src="/img/hotelBanner1.png"></S.ImageHotelBanner1>
+      </S.DivHotelBanner1>
 
-            <MdRecommand />
+      <MdRecommand />
 
-            <PopularHotelSwiper />
-        </ThemeProvider>
-    );
+      <PopularHotelSwiper />
+    </ThemeProvider>
+  );
 };
 
 export default Hotel;

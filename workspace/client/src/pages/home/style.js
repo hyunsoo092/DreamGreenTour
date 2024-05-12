@@ -574,6 +574,7 @@ S.DropdownButton = styled.div`
 
 S.Menu = styled.div`
   background: gray;
+  position: absolute;
   top: 52px;
   left: 50%;
   width: 200px;
@@ -590,6 +591,7 @@ S.Menu = styled.div`
     content: "";
     height: 0;
     width: 0;
+    position: absolute;
     top: -3px;
     left: 50%;
     transform: translate(-50%, -50%);

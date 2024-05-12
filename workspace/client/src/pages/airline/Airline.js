@@ -9,37 +9,37 @@ import { Link, Outlet } from "react-router-dom";
 import AirSwiper from "./AirSwiper";
 
 const Airline = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Outlet/>
-            <Layout />
+  return (
+    <ThemeProvider theme={theme}>
+      <Outlet />
+      <Layout isUse={true} />
 
-            <S.AirHotelTabDiv>
-                <S.AirTabHeadingDiv>
-                    <Link to="/airline">
-                        <S.AirTabHeading>항공</S.AirTabHeading>
-                    </Link>
-                </S.AirTabHeadingDiv>
-                <S.HotelTabHeadingDiv>
-                    <Link to="/hotel">
-                        <S.HotelTabHeading>호텔</S.HotelTabHeading>
-                    </Link>
-                </S.HotelTabHeadingDiv>
-            </S.AirHotelTabDiv>
+      <S.AirHotelTabDiv>
+        <S.AirTabHeadingDiv>
+          <Link to="/airline">
+            <S.AirTabHeading>항공</S.AirTabHeading>
+          </Link>
+        </S.AirTabHeadingDiv>
+        <S.HotelTabHeadingDiv>
+          <Link to="/hotel">
+            <S.HotelTabHeading>호텔</S.HotelTabHeading>
+          </Link>
+        </S.HotelTabHeadingDiv>
+      </S.AirHotelTabDiv>
 
-            {/* AirSwiper */}
-            <AirSwiper />
+      {/* AirSwiper */}
+      <AirSwiper />
 
-            {/* TapComponent */}
-            <TapComponent />
+      {/* TapComponent */}
+      <TapComponent />
 
-            <S.AirBanner1>
-                <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
-            </S.AirBanner1>
-            {/* AirWeekSale */}
-            <AirWeekSale />
-        </ThemeProvider>
-    );
+      <S.AirBanner1>
+        <S.AirBannerImage src="/img/airbanner.png"></S.AirBannerImage>
+      </S.AirBanner1>
+      {/* AirWeekSale */}
+      <AirWeekSale />
+    </ThemeProvider>
+  );
 };
 
 export default Airline;

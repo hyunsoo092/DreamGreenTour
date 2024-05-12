@@ -55,10 +55,21 @@ S.Location = styled.input`
     margin-left: 1rem;
   }
 `;
+S.Place = styled.input`
+  width: 90%;
+  height: 50px;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    margin-left: 1rem;
+  }
+`;
 
 S.Text = styled.textarea`
   width: 90%;
-  height: 400px;
+  height: 300px;
   margin-left: 2rem;
   padding-left: 1rem;
   padding-top: 1rem;

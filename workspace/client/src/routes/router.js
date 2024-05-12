@@ -144,10 +144,7 @@ const router = createBrowserRouter([
         path: "/airline",
         element: <Airline />,
     },
-    {
-        path: "/theme",
-        element: <Theme />,
-    },
+    
     {
         path: "/airline/search",
         element: <Search />,
@@ -163,8 +160,14 @@ const router = createBrowserRouter([
     {
         path: "/airline/payment",
         element: <Payment />,
+
     },
-    { path: "/recommend/:id", element: <Recommend /> },
+  {
+    path: "/theme",
+    element: <Theme />,
+  },
+  { path: "/recommend/:id", element: <Recommend /> },
+
 ]);
 
 export default router;
