@@ -119,29 +119,28 @@ const router = createBrowserRouter([
   {
     path: "/hotel",
     element: <Hotel />,
-    children: [
-      {
-        path: "/hotel/search",
-        element: <HSearch />,
-      },
-      {
-        path: "/hotel/list",
-        element: <List />,
-      },
-      {
-        path: "/hotel/booking",
-        element: <HBooking />,
-      },
-      {
-        path: "/hotel/terms",
-        element: <HTerms />,
-      },
-      {
-        path: "/hotel/payment",
-        element: <HPayment />,
-      },
-    ],
   },
+  {
+    path: "/hotel/search",
+    element: <HSearch />,
+  },
+  {
+    path: "/hotel/list",
+    element: <List />,
+  },
+  {
+    path: "/hotel/booking",
+    element: <HBooking />,
+  },
+  {
+    path: "/hotel/terms",
+    element: <HTerms />,
+  },
+  {
+    path: "/hotel/payment",
+    element: <HPayment />,
+  },
+
   {
     path: "/airline",
     element: <Airline />,
@@ -167,11 +166,8 @@ const router = createBrowserRouter([
   {
     path: "/theme",
     element: <Theme />,
-   },
-   {path: "/recommend/:id",
-    element: <Recommend />,
-    
   },
+  { path: "/recommend/:id", element: <Recommend /> },
 ]);
 
 export default router;

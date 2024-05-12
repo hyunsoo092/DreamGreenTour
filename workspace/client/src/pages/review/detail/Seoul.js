@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
@@ -21,12 +21,29 @@ const Seoul = () => {
   const handleHeart4 = () => {
     setHeart4(!heart4);
   };
+  const [Seoul, setSeoul] = useState([]);
+
+  useEffect(() => {
+    const SeoulData = async () => {
+      const response = await fetch("http://localhost:8000/review/Seoul", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const data = await response.json();
+      setSeoul(data.map((location) => location));
+    };
+
+    SeoulData();
+  }, []);
   return (
     <S.Wrapper>
       <S.ReviewLine1>
         <S.Review>
           <S.ReviewTitle>
-            북촌 한옥마을
+            {Seoul.length > 0 && Seoul[0].place}
             <S.HeartWrapper>
               <S.HiddenCheckBox onChange={handleHeart1} />
               <S.Heart>
@@ -42,14 +59,11 @@ const Seoul = () => {
             src={`${process.env.PUBLIC_URL}/review/SeoulReview1.jpg`}
           />
 
-          <S.ReviewText>
-            가장 한국적인 풍경을 볼 수 있는 곳이라서 서울여행하는 분께는 한번쯤
-            추천합니다. 북에는 볼거리도 많지만 맛있는 음식점도 많아요.
-          </S.ReviewText>
+          <S.ReviewText>{Seoul.length > 0 && Seoul[0].text}</S.ReviewText>
         </S.Review>
         <S.Review>
           <S.ReviewTitle>
-            봉은사
+            {Seoul.length > 0 && Seoul[1].place}
             <S.HeartWrapper>
               <S.HiddenCheckBox onChange={handleHeart2} />
               <S.Heart>
@@ -63,16 +77,13 @@ const Seoul = () => {
           <S.ReviewImg
             src={`${process.env.PUBLIC_URL}/review/SeoulReview2.jpg`}
           />
-          <S.ReviewText>
-            석가탄신일에 정말 가볼만함 서울 한복판에 이렇게 큰 절이 잘
-            없는거같고, 특히 행사땐 등이 정말 너무 이쁘게 되어있음
-          </S.ReviewText>
+          <S.ReviewText>{Seoul.length > 0 && Seoul[1].text}</S.ReviewText>
         </S.Review>
       </S.ReviewLine1>
       <S.ReviewLine2>
         <S.Review>
           <S.ReviewTitle>
-            흥인지문
+            {Seoul.length > 0 && Seoul[2].place}
             <S.HeartWrapper>
               <S.HiddenCheckBox onChange={handleHeart3} />
               <S.Heart>
@@ -86,15 +97,11 @@ const Seoul = () => {
           <S.ReviewImg
             src={`${process.env.PUBLIC_URL}/review/SeoulReview3.jpg`}
           />
-          <S.ReviewText>
-            오래간 만에 동대문역에서 내려 동대문을 보았네요. 옆에 JW 메리어트
-            동대문 호텔이 들어와서 새건물과 옛건물이 어우러진 광경을 볼수
-            있네요. 저녁에 본 동대문도 아름답습니다.
-          </S.ReviewText>
+          <S.ReviewText>{Seoul.length > 0 && Seoul[2].text}</S.ReviewText>
         </S.Review>
         <S.Review>
           <S.ReviewTitle>
-            조계사
+            {Seoul.length > 0 && Seoul[3].place}
             <S.HeartWrapper>
               <S.HiddenCheckBox onChange={handleHeart4} />
               <S.Heart>
@@ -108,11 +115,7 @@ const Seoul = () => {
           <S.ReviewImg
             src={`${process.env.PUBLIC_URL}/review/SeoulReview4.jpg`}
           />
-          <S.ReviewText>
-            종로1가에 위치해서, 인사동, 경복궁을 돌아볼때 함께 들러 구경하기
-            좋은 장소입니다. 도심 한복판에 불교 사찰이 있어서 외국 친구들에게도
-            추천하는 장소입니다.
-          </S.ReviewText>
+          <S.ReviewText>{Seoul.length > 0 && Seoul[3].text}</S.ReviewText>
         </S.Review>
       </S.ReviewLine2>
     </S.Wrapper>

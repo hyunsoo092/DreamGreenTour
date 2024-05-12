@@ -39,6 +39,7 @@ const Write = () => {
                 },
                 body: JSON.stringify({
                   location: formData.location,
+                  place: formData.place,
                   text: formData.text,
                   heart: 0,
                 }),
@@ -61,6 +62,16 @@ const Write = () => {
             id="location"
             placeholder="후기를 작성할 지역을 입력하세요."
             {...register("location", {
+              required: true,
+            })}
+          />
+          {errors?.location?.type === "required" && (
+            <S.Warning>후기를 작성할 지역을 입력해주세요.</S.Warning>
+          )}
+          <S.Place
+            id="place"
+            placeholder="후기를 작성할 장소를 작성하세요."
+            {...register("place", {
               required: true,
             })}
           />
