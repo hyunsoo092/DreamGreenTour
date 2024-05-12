@@ -1039,7 +1039,6 @@ return (
  </Slider>
  </S.region>
 
-
         <S.top>
           <p className='num1'>WEEKLY BEST DEALS</p>
           <p className='num2'>이번 주에 가장</p>
@@ -1077,29 +1076,14 @@ return (
               <S.icons>
                 <FontAwesomeIcon icon={faPen}/>
                 <p>투어/입장권 상품 판매는 "판매회원 가입 안내" 페이지에서 별도의 회원가입 후 가능합니다. <br /> <br />
-                  판매회원 가입 문의 (국내) hhj1217@hanatour.com <br /> <br />
+                  판매회원 가입 문의 (국내) hhj1217@hanatour.com <br/> <br/>
                   (해외)jinie27@hanatour.com</p>
               </S.icons>
           </S.end>
 
-
-
-
-
-
-
-
   </S.div>
 )
 
-
-
-
-
-
-
-
-}
-
+  }
 
 export default MobileView;

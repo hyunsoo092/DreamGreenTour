@@ -249,12 +249,9 @@ S.ListWrapper = styled.div`
     width: 50%;
     height: 30%;
   
-
    }
-
-   
-
   `
+  
   S.Image1 = styled.img`
    width:  100%;
    height: 100%;
@@ -262,7 +259,6 @@ S.ListWrapper = styled.div`
    background-size: cover; 
    cursor: pointer;
 
-   
   `
 
   S.Text = styled.div`

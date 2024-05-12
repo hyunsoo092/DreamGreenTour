@@ -58,20 +58,22 @@ const router = createBrowserRouter([
     path: "/join",
     element: <Join />,
   },
+  
   {
     path: "/mypage",
     element: <Mypage />,
-    children: [
-      {
+  },
+ 
+  {
         path: "/mypage/tourSchedule",
         element: <TourSchedule />,
-      },
-      {
+  },
+  {
         path: "/mypage/infoUpdate",
         element: <InfoUpdate />,
-      },
-    ],
   },
+    
+  
   {
     path: "/review",
     element: <Review />,
