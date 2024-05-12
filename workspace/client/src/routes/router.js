@@ -33,145 +33,138 @@ import Jeju from "../pages/review/detail/Jeju";
 import Write from "../pages/review/write/Write";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Home />,
-      },
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
 
-      {
-        path: "/tour",
-        element: <Tour />,
-      },
-      {
-        path: "/loading",
-        element: <Loading />,
-      },
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/join",
-    element: <Join />,
-  },
-  {
-    path: "/mypage",
-    element: <Mypage />,
-    children: [
-      {
-        path: "/mypage/tourSchedule",
-        element: <TourSchedule />,
-      },
-      {
-        path: "/mypage/infoUpdate",
-        element: <InfoUpdate />,
-      },
-    ],
-  },
-  {
-    path: "/review",
-    element: <Review />,
-    children: [
-      {
-        path: "/review/Seoul",
-        element: <Seoul />,
-      },
-      {
-        path: "/review/KangWon",
-        element: <KangWon />,
-      },
-      {
-        path: "/review/Jeonla",
-        element: <Jeonla />,
-      },
-      {
-        path: "/review/Gyeongsang",
-        element: <Gyeongsang />,
-      },
-      {
-        path: "/review/GyeongGi",
-        element: <GyeongGi />,
-      },
-      {
-        path: "/review/ChungCheong",
-        element: <ChungCheong />,
-      },
-      {
-        path: "/review/Jeju",
-        element: <Jeju />,
-      },
-    ],
-  },
-  {
-    path: "/write",
-    element: <Write />,
-  },
-  {
-    path: "/hotel",
-    element: <Hotel />,
-    children: [
-      {
+            {
+                path: "/tour",
+                element: <Tour />,
+            },
+            {
+                path: "/loading",
+                element: <Loading />,
+            },
+        ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Register />,
+    },
+    {
+        path: "/join",
+        element: <Join />,
+    },
+    {
+        path: "/mypage",
+        element: <Mypage />,
+        children: [
+            {
+                path: "/mypage/tourSchedule",
+                element: <TourSchedule />,
+            },
+            {
+                path: "/mypage/infoUpdate",
+                element: <InfoUpdate />,
+            },
+        ],
+    },
+    {
+        path: "/review",
+        element: <Review />,
+        children: [
+            {
+                path: "/review/Seoul",
+                element: <Seoul />,
+            },
+            {
+                path: "/review/KangWon",
+                element: <KangWon />,
+            },
+            {
+                path: "/review/Jeonla",
+                element: <Jeonla />,
+            },
+            {
+                path: "/review/Gyeongsang",
+                element: <Gyeongsang />,
+            },
+            {
+                path: "/review/GyeongGi",
+                element: <GyeongGi />,
+            },
+            {
+                path: "/review/ChungCheong",
+                element: <ChungCheong />,
+            },
+            {
+                path: "/review/Jeju",
+                element: <Jeju />,
+            },
+        ],
+    },
+    {
+        path: "/write",
+        element: <Write />,
+    },
+    {
+        path: "/hotel",
+        element: <Hotel />,
+    },
+    {
         path: "/hotel/search",
         element: <HSearch />,
-      },
-      {
+    },
+    {
         path: "/hotel/list",
         element: <List />,
-      },
-      {
+    },
+    {
         path: "/hotel/booking",
         element: <HBooking />,
-      },
-      {
+    },
+    {
         path: "/hotel/terms",
         element: <HTerms />,
-      },
-      {
+    },
+    {
         path: "/hotel/payment",
         element: <HPayment />,
-      },
-    ],
-  },
-  {
-    path: "/airline",
-    element: <Airline />,
-    children: [
-      {
+    },
+    {
+        path: "/airline",
+        element: <Airline />,
+    },
+    {
+        path: "/theme",
+        element: <Theme />,
+    },
+    {
         path: "/airline/search",
         element: <Search />,
-      },
-      {
+    },
+    {
         path: "/airline/booking",
         element: <Booking />,
-      },
-      {
+    },
+    {
         path: "/airline/terms",
         element: <Terms />,
-      },
-      {
+    },
+    {
         path: "/airline/payment",
         element: <Payment />,
-      },
-    ],
-  },
-  {
-    path: "/theme",
-    element: <Theme />,
-   },
-   {path: "/recommend/:id",
-    element: <Recommend />,
-    
-  },
+    },
+    { path: "/recommend/:id", element: <Recommend /> },
 ]);
 
 export default router;

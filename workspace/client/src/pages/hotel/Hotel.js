@@ -12,6 +12,8 @@ import PopularHotelSwiper from "./PopularHotelSwiper";
 
 
 const Hotel = () => {
+
+
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle />
