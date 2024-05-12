@@ -10,16 +10,13 @@ const port = 8000;
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://dreamgreentour.netlify.app/"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
 
 app.use(
   cors({
-    origin: "https://dreamgreentour.netlify.app/",
+    origin: "*",
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
     optionsSuccessStatus: 200,
